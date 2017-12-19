@@ -76,7 +76,7 @@ view,text{
 }
 .line{
   position: absolute;
-  top:6%;
+  top:9%;
   left:12%;
   width: 76%;
   height:82%
@@ -87,5 +87,5 @@ view,text{
     top: 0px;
     width: 0px;
     height: 100%;
-    border-left: 1px solid;
+    border-left: 1rpx solid;
 }

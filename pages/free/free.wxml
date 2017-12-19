@@ -15,6 +15,14 @@
     <view class='line'>
       <view style='transform:rotate(9deg)'></view>
       <view style='transform:rotate(27deg);'></view>
+      <view style='transform:rotate(45deg);'></view>
+      <view style='transform:rotate(63deg);'></view>
+      <view style='transform:rotate(81deg);'></view>
+      <view style='transform:rotate(99deg);'></view>
+      <view style='transform:rotate(117deg);'></view>
+      <view style='transform:rotate(135deg);'></view>
+      <view style='transform:rotate(153deg);'></view>
+      <view style='transform:rotate(171deg);'></view>
     </view>
   </view>
 
