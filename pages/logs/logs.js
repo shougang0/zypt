@@ -6,6 +6,11 @@ Page({
     logs: []
   },
   onLoad: function () {
+    if (wx.getStorageSync('flag')==3){
+      wx.switchTab({
+        url: '../index/index',
+      })
+    }
     this.setData({
       userInfo: app.globalData.userInfo
      /* logs: (wx.getStorageSync('logs') || []).map(log => {
@@ -17,13 +22,15 @@ Page({
     var a = e.detail.value;
     var b = app.globalData.userInfo;
     var c = Object.assign(a, b, { trd_session: wx.getStorageSync('trd_session') });
+    //console.log('form发生了submit事件，携带数据为：', c)
     let that=this;
-    wx.request({
+    c.user = encodeURI(c.user);
 
+    console.log(that);
+    wx.request({
       url: 'http://www.zyylpt.com/index.php/weixin/login.html',
-      header: {
-        'content-type': 'application/json'
-      },
+      dataType: 'json',
+
       data: c,
       success: function (res) {
         console.log(res) //登录结果
@@ -37,10 +44,10 @@ Page({
           //登录成功，设置flag、
           wx.setStorageSync('flag', 3);
           wx.setStorageSync('ptuserinfo', res.data);
-          console.log(that.globalDat)
-          that.globalData.uid = res.data.userid 
+
+          app.globalData.uid = res.data.userid
           wx.switchTab({
-           // url: '../index/index',
+            url: '../index/index',
           })
         }
       }

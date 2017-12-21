@@ -2,41 +2,54 @@
 App({
   onLaunch: function (options) {
     var that = this;
-    // 展示本地存储能力
-   /* var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)*/
-    // 登录
-    wx.login({
-      success:function(res) {
-        if (res.code) {
-          var code = res.code;          
-          wx.request({
-            url: "http://www.zyylpt.com/index.php/weixin/weixinapi.html",
-            header: {
-              'content-type': 'application/json'
-            },
-            type: 'GET',
-            data: { code: res.code },
-            success: function (res) {
-             // console.log(that);
-              //获取openid
-              wx.setStorageSync('flag', res.data.code)
-              wx.setStorageSync('trd_session', res.data.trd_session)  
-              if (res.data.code == 3) {
-                that.globalData.uid = res.data.ptuserinfo.userid 
-                wx.setStorageSync('ptuserinfo', res.data.ptuserinfo);
-                wx.switchTab({
-                  url: '../index/index',
-                })
+
+    if (wx.getStorageSync('flag') == 3 && wx.getStorageSync('ptuserinfo') ){
+      //判断session是否有效
+      that.globalData.uid = wx.getStorageSync('ptuserinfo').userid;
+    //有效
+    }else{
+      //无效
+      wxlogin();
+    }
+
+
+    function wxlogin(){
+      // 登录
+      wx.login({
+        success: function (res) {
+          if (res.code) {
+            var code = res.code;
+
+            wx.request({
+              url: "http://www.zyylpt.com/index.php/weixin/weixinapi.html",
+              header: {
+                'content-type': 'application/json'
+              },
+              type: 'GET',
+              data: { code: res.code },
+              success: function (res) {
+                // console.log(that);
+                //获取openid
+                wx.setStorageSync('flag', res.data.code)
+                wx.setStorageSync('trd_session', res.data.trd_session);
+
+                if (res.data.code == 3) {
+                  wx.setStorageSync('ptuserinfo', res.data.ptuserinfo);
+                  that.globalData.uid = res.data.ptuserinfo.userid;
+                  console.log('有效1');
+                  // wx.switchTab({
+                  //   url: 'pages/index/index',
+                  // })
+                }
+
               }
-            }
-          })
-        } else {
-          console.log('获取用户登录态失败！' + res.errMsg)
-        }   
-      }
-    })
+            })
+          } else {
+            console.log('获取用户登录态失败！' + res.errMsg)
+          }
+        }
+      })
+    }
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -59,7 +72,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    uid: "",//'999980049'自//999977526测//744293242周
+    uid: "",
     userid: null,
     username: null
   }
