@@ -79,7 +79,8 @@ view,text{
   top:9%;
   left:12%;
   width: 76%;
-  height:82%
+  height:82%;
+  transition:all 5s;
 }
 .line view{
     position: absolute;

@@ -1,7 +1,6 @@
 <!--pages/goodstuff/goodstuff.wxml-->
 <view class='TopBanner'>
   <image src='../../img/jinchengtuo.png' ></image>
-  <button bindtap='back' size='mini' type='primary' class='back'>返回</button>
 </view>
 <view class='content'>
   <view class='content_text'>

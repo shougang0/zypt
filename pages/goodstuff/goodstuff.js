@@ -3,15 +3,12 @@ var app = getApp();
 Page({
   data: {
     lists:[],
-    parent:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (o) {
-    console.log(o.z)
-    this.setData({ parent:o.z})
+  onLoad: function () {
     wx.showLoading({
       title: '加载中',
     })
@@ -28,7 +25,11 @@ Page({
        }
     })
   },
-  
+  onPullDownRefresh: function () {//下拉刷新
+    
+    wx.showNavigationBarLoading();
+    this.onLoad();
+  },
   change_: function (event) {
     let id=event.currentTarget.dataset.id;
     let that=this;
@@ -48,20 +49,7 @@ Page({
         })
       }
     })
-  },
-  back(){
-    if(this.data.parent=='z'){
-      wx.switchTab({
-        url: '../my/my',
-      })  
-    }else{
-      wx.navigateBack({
-        delta:1
-      })
-    }
-       
-  },
-  
+  }, 
 })
 
 function confirmEnter(id,self) {
