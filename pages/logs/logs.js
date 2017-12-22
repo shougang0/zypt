@@ -40,7 +40,13 @@ Page({
             icon: 'loading',
             duration: 500,
           });
-        } else if (res.data == 3){
+        } else if(res.data == 3){
+          wx.showToast({
+            title: '请求异常请稍后再试',
+            icon: 'loading',
+            duration: 500,
+          });
+        }else{
           //登录成功，设置flag、
           wx.setStorageSync('flag', 3);
           wx.setStorageSync('ptuserinfo', res.data);

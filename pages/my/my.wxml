@@ -1,12 +1,12 @@
 <!--pages/my/my.wxml-->
 <!-- 用户信息 -->
-<view>
-  {{username}}
+<view class='lists'>
+ 当前用户 {{username}}
 </view>
 
 <!-- 订单信息 -->
 <view>
-  <view>全部订单 <text>查看全部订单</text> </view>
+  <view >全部订单 <text>查看全部订单</text> </view>
   <view class='content_center'>
     <view>待付款</view>
     <view>等待发货</view>
@@ -25,4 +25,5 @@
   <view>联系我们</view>
   <view>系统设置</view>
   <view>待定</view>
+  <view bindtap='wxlogout'>解除账号绑定</view>
 </view>
