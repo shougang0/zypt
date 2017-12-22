@@ -45,7 +45,7 @@
     <view class='center'>
       为您节省{{price}}元
     </view>
-    <view  class='colse content_center'>
+    <view  class='colse content_center m_10'>
         <view wx:if="{{one_prize}}"  class='btn'><navigator url='../prize/prize' open-type="redirect">查看奖品</navigator></view>
         <!-- <view wx:else class='btn'>查看奖品</view> -->
         <view bindtap='modalhide' class='btn'>关闭</view> 
@@ -70,5 +70,5 @@
     </view>  
   </view>
 </view>
-<view class="modal modal_opacity" wx:if="{{isbegin}}">
+<view class="modal modal_opacity m_10" wx:if="{{isbegin}}">
 </view>

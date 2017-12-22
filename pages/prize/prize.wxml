@@ -20,6 +20,7 @@
       <view>寄送</view>
     </view>
     <view class='rule_list_content '>
+      <view wx:if="{{unde}}" class='center'>您的奖品列表为空！！</view>
       <view  wx:for="{{rule_list_content}}" class=''><!--//>奖品列表-->
         <text style="width:16%">{{index+1}}</text>
         <text class="prizename" bindtap='showdetail' 

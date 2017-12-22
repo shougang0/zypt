@@ -39,13 +39,13 @@ Page({
           wx.showToast({
             title: '账号密码错误',
             icon: 'loading',
-            duration: 500,
+            duration: 1000,
           });
         } else if(res.data == 3){
           wx.showToast({
             title: '请求异常请稍后再试',
             icon: 'loading',
-            duration: 500,
+            duration: 1000,
           });
         }else{
           //登录成功，设置flag、
