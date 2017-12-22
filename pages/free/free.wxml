@@ -12,7 +12,7 @@
     </view>
     
     <image src='http://zhongyouapp.com/resources/mobile/game/img/new_byimg/pointer.png' bindtap='getProdut' class="pointer"></image>
-    <view class='line'>
+    <view class='line' style='transform: rotate({{pan_rot}}deg)!important;'>
       <view style='transform:rotate(9deg)'></view>
       <view style='transform:rotate(27deg);'></view>
       <view style='transform:rotate(45deg);'></view>
