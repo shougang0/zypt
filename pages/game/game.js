@@ -17,7 +17,7 @@ Page({
   onLoad () {
     let that=this
     wx.request({
-      url: "http://www.zyylpt.com/index.php/app/jiangpin.html", 
+      url: app.globalData.apiBase+"index.php/app/jiangpin.html", 
       success:function(res){
         let d = JSON.parse(res.data.replace(/^\(|\)$/g, '')); 
         that.setData({rulelist:d.src})
@@ -28,9 +28,9 @@ Page({
     Twinkle(this)
     let that=this;
     wx.request({
-      url: "http://www.zyylpt.com/index.php/app/playone.html",
+      url: app.globalData.apiBase+"index.php/weixin/playone.html",
       data:{
-        uid: app.globalData.uid
+        trd_session: app.globalData.trd_session
       },
       success:function(res){
         clearInterval(begin);
@@ -58,9 +58,9 @@ Page({
     Twinkle(this)
     let that = this;
     wx.request({
-      url: "http://www.zyylpt.com/index.php/app/ten.html",
+      url: app.globalData.apiBase +"index.php/weixin/ten.html",
       data: {
-        uid: app.globalData.uid
+        trd_session: app.globalData.trd_session
       },
       success: function (res) {
         clearInterval(begin);
@@ -129,5 +129,5 @@ function Twinkle(self){ //跳动方法
         duration: 1000
       })      
     }    
-  },10000)
+  },20000)
 }

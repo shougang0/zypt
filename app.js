@@ -2,11 +2,18 @@
 App({
   onLaunch: function (options) {
     var that = this;
-
-    if (wx.getStorageSync('flag') == 3 && wx.getStorageSync('ptuserinfo') ){
+    //开发阶段一直false 之后启用判断 wx.getStorageSync('flag') == 3 && wx.getStorageSync('ptuserinfo')
+    if (false ){
       //判断session是否有效
-      that.globalData.uid = wx.getStorageSync('ptuserinfo').userid;
-    //有效
+      wx.checkSession({
+        success:function(){
+          that.globalData.uid = wx.getStorageSync('ptuserinfo').userid;
+        },
+        fail:function(){
+          wxlogin();
+        }
+        
+      })
     }else{
       //无效
       wxlogin();
@@ -19,9 +26,9 @@ App({
         success: function (res) {
           if (res.code) {
             var code = res.code;
-
+      
             wx.request({
-              url: "http://www.zyylpt.com/index.php/weixin/weixinapi.html",
+              url: that.globalData.apiBase+"index.php/weixin/weixinapi.html",
               header: {
                 'content-type': 'application/json'
               },
@@ -36,7 +43,8 @@ App({
                 if (res.data.code == 3) {
                   wx.setStorageSync('ptuserinfo', res.data.ptuserinfo);
                   that.globalData.uid = res.data.ptuserinfo.userid;
-                  console.log('有效1');
+                  that.globalData.trd_session = res.data.trd_session
+                  //console.log('有效1');
                   // wx.switchTab({
                   //   url: 'pages/index/index',
                   // })
@@ -71,6 +79,8 @@ App({
     })
   },
   globalData: {
+    apiBase: "http://localhost/",
+    trd_session:"",
     userInfo: null,
     uid: "",
     userid: null,

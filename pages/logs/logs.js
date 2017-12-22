@@ -28,7 +28,7 @@ Page({
 
     console.log(that);
     wx.request({
-      url: 'http://www.zyylpt.com/index.php/weixin/login.html',
+      url: app.globalData.apiBase+'index.php/weixin/login.html',
       dataType: 'json',
 
       data: c,
@@ -40,7 +40,7 @@ Page({
             icon: 'loading',
             duration: 500,
           });
-        } else {
+        } else if (res.data == 3){
           //登录成功，设置flag、
           wx.setStorageSync('flag', 3);
           wx.setStorageSync('ptuserinfo', res.data);
