@@ -79,7 +79,7 @@ App({
     })
   },
   globalData: {
-    apiBase: "http://localhost/",
+    apiBase: "http://www.zyylpt.com/",
     trd_session:"",
     userInfo: null,
     uid: "",
