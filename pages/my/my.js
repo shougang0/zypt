@@ -1,6 +1,5 @@
 // pages/my/my.js
 var app = getApp();
-var info = wx.getStorageSync('ptuserinfo');
 Page({
   data: {
     username:""
@@ -8,12 +7,13 @@ Page({
 
   /* 生命周期函数--监听页面加载*/
   onLoad: function (options) {
+    var info = wx.getStorageSync('ptuserinfo');
     this.setData({username: info.username})
   },
 
   wxlogout(){//解除绑定
     let that = this;
-    wx.showModal({title:'解除绑定', content:'确定要清除' + info.username +'的账号绑定么？',
+    wx.showModal({title:'解除绑定', content:'确定要清除' + this.data.username +'的账号绑定么？',
          success: function(res){
            //如果用户点击确定
            if(res.confirm){
@@ -35,7 +35,7 @@ Page({
                        wx.setStorageSync('flag', 2),
                      setTimeout(function(){
                          wx.redirectTo({
-                         url: '../logs/logs',
+                           url: '../welcome/welcome',
                        })
                      },1000)
                       
