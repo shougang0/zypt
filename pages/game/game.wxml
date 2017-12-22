@@ -6,7 +6,7 @@
 
   <!-- 图片列表 -->
   <view class='rulelist'>
-     <view wx:for="{{rulelist}}" wx:key="*this" wx:for-index="idx" bindtap='listDetail' data-price='{{item.shop_price}}'  style='{{idx==40||idx==81||idx==122||idx==163?"width:100%":""}}'
+     <view wx:for="{{rulelist}}"  wx:for-index="idx" bindtap='listDetail' data-price='{{item.shop_price}}'  style='{{idx==40||idx==81||idx==122||idx==163?"width:100%":""}}'
      data-cot="{{item.good_name}}" data-url="{{item.img_url}}" >
         <image src='http://www.zyylpt.com{{item.img_url}}' mode='scaleToFill' wx:if="{{idx%2==0}}"
          class='{{idx==showNnm?"opacity_0":""}}'></image>

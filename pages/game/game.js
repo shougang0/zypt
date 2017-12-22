@@ -33,25 +33,33 @@ Page({
         trd_session: app.globalData.trd_session
       },
       success:function(res){
+        console.log(res.data)
+        if (!res.data) return
         clearInterval(begin);
-        let d = res.data.replace(/^\(|\)$/g, '');
+        
+        var d = res.data.replace(/^\(|\)$/g, '');
         if(d==0){
           wx.showModal({
             title: '',
             content: '您的大米不足',
           })
         }else { 
-          d=JSON.parse(d) 
+          d=JSON.parse(d); 
           that.setData({ 
             modaltitle: d.good_name, 
             imgUrl: d.img_url,
             price: d.market_price,
             one_prize: true,  
+            ismodal: true //模态框
           })
-          that.setData({ ismodal: true}) //模态框
         }
-        that.setData({isbegin: false }) //模态框
+        that.setData({isbegin: false }) 
+      },
+      fail: function (error) {
+        that.setData({ isbegin: false }) //遮罩层
+        console.log(error)
       }
+
     })
   },
   ten_prize(){
@@ -80,6 +88,10 @@ Page({
         that.setData({
           isbegin: false
         })
+      },
+      fail: function (error) {
+        that.setData({ isbegin: false }) //遮罩层
+        console.log(error)
       }
     })
   },
@@ -93,11 +105,11 @@ Page({
     let detail=[];
     if(event.currentTarget.dataset){
       detail = event.currentTarget.dataset;
-      this.setData({ ismodal: true })
       this.setData({ 
         price: detail.price,
         modaltitle: detail.cot,
         imgUrl: detail.url,
+        ismodal: true
       })
     }
   }, 
@@ -107,8 +119,7 @@ Page({
       one_prize:false,
       ten_prize:false,
     })
-  },
-  
+  },  
 })
 
 function Twinkle(self){ //跳动方法
@@ -117,17 +128,5 @@ function Twinkle(self){ //跳动方法
   begin = setInterval(function(){ //设置定时器
     var num = Math.floor(Math.random() * len);
     self.setData({ showNnm: num})  //随机某个跳动
-  }, 50);
-
-  setTimeout(function(){   //网络延时后清除定时器
-    clearInterval(begin);
-    
-    if (isbegin){
-      self.setData({ isbegin: false }) //取消遮罩层 
-      wx.showToast({
-        title: '网络请求超时，请到已的奖品查看',
-        duration: 1000
-      })      
-    }    
-  },20000)
+  }, 200);
 }
