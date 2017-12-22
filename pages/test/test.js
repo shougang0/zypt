@@ -4,6 +4,20 @@ Page({
   /**
    * 页面的初始数据
    */
+  /**
+   * "pages/logs/logs",//注册
+    "pages/index/index",//首页
+    "pages/my/my",//我的
+    "pages/game/game",//抽奖
+    "pages/prize/prize",//奖品列表
+    "pages/free/free",//白拿
+    "pages/goodstuff/goodstuff",//我的余粮
+    "pages/shop/shop",//买米
+    "pages/order/order",//我的订单
+    "pages/rich/rich",//神秘大奖
+    "pages/address/address",//我的地址
+    "pages/test/test"//测试
+   */
   data: {
   
   },
