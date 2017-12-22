@@ -126,6 +126,8 @@ function load(self){
           pageNum: pagenum,
           totalNam: li.num
         })
+      }else{
+        that.setData({unde:true})
       }
     }
   })

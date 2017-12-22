@@ -32,7 +32,7 @@ Page({
                        icon: "success"
                      }),
                      setTimeout(function(){
-                         wx.redirectTo({
+                       wx.reLaunch({
                          url: '../logs/logs',
                        })
                      },1000)

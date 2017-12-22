@@ -14,7 +14,7 @@
     <text>{{item.weight}}</text>
     <text wx:if='{{item.prize_id!=2}}'>{{item.huilv}}</text>
     <text wx:else>{{}}</text>
-    <text wx:if="{{item.send==1}}" bindtap='change_' data-id="{{item.prize_id}}">换米</text>
+    <text wx:if="{{item.send==1 && item.prize_id!=2}}" bindtap='change_' data-id="{{item.prize_id}}">换米</text>
     <text wx:else> {{}}</text>
   </view>
 </view>

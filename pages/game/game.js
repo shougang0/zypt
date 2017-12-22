@@ -24,7 +24,8 @@ Page({
       }
     })
   },
-  one_prize(){  //一次抽奖
+  one_prize(){ 
+    if (!app.globalData.trd_session) return //一次抽奖
     Twinkle(this)
     let that=this;
     wx.request({
@@ -35,8 +36,7 @@ Page({
       success:function(res){
         console.log(res.data)
         if (!res.data) return
-        clearInterval(begin);
-        
+        clearInterval(begin); 
         var d = res.data.replace(/^\(|\)$/g, '');
         if(d==0){
           wx.showModal({

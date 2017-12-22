@@ -26,11 +26,12 @@ Page({
     })
   },
   onPullDownRefresh: function () {//下拉刷新
-    
-    wx.showNavigationBarLoading();
     this.onLoad();
   },
   change_: function (event) {
+    wx.showLoading({
+      title: '加载中',
+    })
     let id=event.currentTarget.dataset.id;
     let that=this;
     wx.request({
@@ -38,6 +39,7 @@ Page({
       data: { uid: app.globalData.uid,id:id},
       success:function(res){
         let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
+        wx.hideLoading()
         wx.showModal({
           title: '',
           content: '确认用' + d['forcharge'] + '斤换取大米' + d['dami']+'斤',
