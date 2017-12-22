@@ -23,7 +23,8 @@ Page({
                  trd_session: app.globalData.trd_session
                },
                success: function (res) {
-                 wx.clearStorage({
+                 wx.removeStorage({
+                   key:'ptuserinfo',
                    success: function (msg) {
                      wx.showToast({
                        title: "账号解除绑定成功",
@@ -31,6 +32,7 @@ Page({
                        mask: true,
                        icon: "success"
                      }),
+                       wx.setStorageSync('flag', 2),
                      setTimeout(function(){
                          wx.redirectTo({
                          url: '../logs/logs',
