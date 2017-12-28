@@ -14,5 +14,12 @@ Page({
         url: "../logs/logs",
       });
     },
-   
+  onLoad(){
+    var state=wx.getStorageSync('flag')
+    if(state==3){
+      wx.switchTab({
+        url: "../index/index",
+      });
+    }
+  } 
 })

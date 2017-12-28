@@ -1,0 +1,21 @@
+<!--pages/contact/contact.wxml-->
+<view class='content'>
+  <view class='h1_title'>
+    <text>联系我们</text>
+  </view>
+  <view class='cont'>
+    <view>
+      <text>招商合作电话：18920108005</text>
+    </view>
+      <view>
+      <text>客服服务电话：022-24462177</text>
+    </view>
+      <view>
+      <text>客服微信:zhongyoupingtai0905</text>
+    </view>
+      <view>
+      <text>诚聘英才电话：022-24460276</text>
+    </view>
+  </view>
+  
+</view>

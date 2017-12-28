@@ -70,5 +70,5 @@
     </view>  
   </view>
 </view>
-<view class="modal modal_opacity m_10" wx:if="{{isbegin}}">
+<view class="modal modal_opacity" wx:if="{{isbegin}}">
 </view>

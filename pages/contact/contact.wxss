@@ -1,0 +1,17 @@
+/* pages/contact/contact.wxss */
+.content{
+  background: url('http://zhongyouapp.com/resources/mobile/shop/images/new-img/us.jpg');
+  background-size: 100%;
+  color:#fff;
+  height: 100%;
+  font-family: "楷体";
+}
+.h1_title{
+  font-size: 78rpx;
+  text-align:center;
+  padding-top:100px;
+}
+.cont view{
+  padding:0 15px ;
+  margin: 20px 0;
+}
