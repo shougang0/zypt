@@ -1,3 +1,4 @@
+// 抽中产品列表
 var app = getApp();
 Page({
   data: {
@@ -15,7 +16,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    load(this)
+    load(this)//加载数据
   },
   showdetail(event){
     let detail = [];
@@ -90,7 +91,7 @@ Page({
       ismodal: false,
     })
   },
-  bindPickerChange: function (e) {
+  bindPickerChange: function (e) {//下拉刷新
     wx.showLoading({
       title: '加载中',
     })

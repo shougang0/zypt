@@ -21,8 +21,8 @@
   <navigator url='../prize/prize' open-type='redirect'><view>我的必赢奖品</view></navigator>
   <navigator url='../goodstuff/goodstuff' ><view>我的余粮</view></navigator>
   <!-- <view></view> -->
-  <navigator url='../address/address' ><view>收货地址</view></navigator>
-  <view>联系我们</view>
+  <navigator url='../address/address'><view>收货地址</view></navigator>
+  <navigator url='../contact/contact'><view>联系我们</view></navigator>
   <view>系统设置</view>
   <view>待定</view>
   <view bindtap='wxlogout'>解除账号绑定</view>

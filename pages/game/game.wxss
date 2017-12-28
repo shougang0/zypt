@@ -59,7 +59,7 @@
   border-radius:6px;
   color:#000;
   border:1px solid #fff;
-  width:148rpx;
+  width:170rpx;
   text-align:center;
   padding:3px;
 }

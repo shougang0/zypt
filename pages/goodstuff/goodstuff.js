@@ -9,24 +9,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    wx.showLoading({
-      title: '加载中',
-    })
-    let that=this
-    wx.request({
-       url : "http://www.zyylpt.com/index.php/app/myfood.html",
-       data: { uid: app.globalData.uid},
-       success:function(res){
-         wx.hideLoading()
-         if(res.data){
-           let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
-           that.setData({ lists: d });
-         }
-       }
-    })
+    load(this);
+   // let that=this
+    
   },
   onPullDownRefresh: function () {//下拉刷新
-    this.onLoad();
+    load(this);
   },
   change_: function (event) {
     wx.showLoading({
@@ -77,4 +65,20 @@ function confirmEnter(id,self) {
       }      
     }
   })  
+}
+function load(self){
+  wx.showLoading({
+    title: '加载中',
+  })
+  wx.request({
+    url: "http://www.zyylpt.com/index.php/app/myfood.html",
+    data: { uid: app.globalData.uid },
+    success: function (res) {
+      wx.hideLoading()
+      if (res.data) {
+        let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
+        self.setData({ lists: d });
+      }
+    }
+  })
 }

@@ -35,7 +35,7 @@ Page({
       },
       success:function(res){
         console.log(res.data)
-        if (!res.data) return
+        if (res.data.errmsg) return that.setData({ isbegin: false }) 
         clearInterval(begin); 
         var d = res.data.replace(/^\(|\)$/g, '');
         if(d==0){
@@ -63,6 +63,7 @@ Page({
     })
   },
   ten_prize(){
+    if (!app.globalData.trd_session) return //抽奖
     Twinkle(this)
     let that = this;
     wx.request({
@@ -71,6 +72,7 @@ Page({
         trd_session: app.globalData.trd_session
       },
       success: function (res) {
+        if (res.data.errmsg) return that.setData({ isbegin: false }) 
         clearInterval(begin);
         let d = res.data.replace(/^\(|\)$/g, '');
         if (d == 0) {
@@ -128,5 +130,5 @@ function Twinkle(self){ //跳动方法
   begin = setInterval(function(){ //设置定时器
     var num = Math.floor(Math.random() * len);
     self.setData({ showNnm: num})  //随机某个跳动
-  }, 200);
+  }, 100);
 }
