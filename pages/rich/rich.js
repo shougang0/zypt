@@ -6,7 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listnum:[]
+    listnum:[],
+    imgList: ['new_pic/gong2.jpg','new_pic/xi2.jpg','new_pic/fa2.jpg','new_pic/cai2.jpg',
+      'new_pic/ji2.jpg','new_pic/xiang2.jpg','new_pic/ru2.jpg','new_pic/yi2.jpg',
+     ]
+      
   },
   onLoad: function (options) {
     var that = this

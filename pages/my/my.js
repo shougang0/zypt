@@ -9,7 +9,7 @@ Page({
   onLoad: function (options) {
     var info = wx.getStorageSync('ptuserinfo');
     this.setData({username: info.username})
-  },
+  }, 
 
   wxlogout(){//解除绑定
     let that = this;

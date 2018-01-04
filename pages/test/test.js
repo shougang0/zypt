@@ -18,6 +18,13 @@ Page({
     "pages/address/address",//我的地址
     "pages/test/test"//测试
    */
+ /* "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f00",
+    "backgroundColor": "#ccc",//下拉背景颜色
+    "navigationBarTitleText": "中油平台",
+    "navigationBarTextStyle": "white"
+  },*/
   data: {
   
   },
@@ -78,3 +85,28 @@ Page({
   
   }
 })
+
+/*"tabBar": {
+  "list": [
+    {
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/img/home1.png",
+      "selectedIconPath": "/img/home.png"
+    },
+    {
+      "pagePath": "pages/shop/shop",
+      "text": "米店",
+      "iconPath": "/img/rice1.png",
+      "selectedIconPath": "/img/rice.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "/img/my1.png",
+      "selectedIconPath": "/img/my.png"
+    }
+  ],
+    "color": "#A6A6A7",
+      "selectedColor": "#f00"
+},*/

@@ -13,12 +13,12 @@ Page({
   },
 
   onLoad () {
-    wx.showLoading({
-      title: '加载中',
-    })
     load(this)//加载数据
   },
-  showdetail(event){
+  onPullDownRefresh () {//下拉刷新
+    load(this);
+  },
+  showdetail(event){//显示商品的详情
     let detail = [];
     if (event.currentTarget.dataset) {
       detail = event.currentTarget.dataset;
@@ -91,26 +91,25 @@ Page({
       ismodal: false,
     })
   },
-  bindPickerChange: function (e) {//下拉刷新
-    wx.showLoading({
-      title: '加载中',
-    })
+  bindPickerChange: function (e) {//加载多页数据
     this.setData({
       indexs: e.detail.value
     }),
-    this.onLoad();
+    load(this)//加载数据
   },
 })
 
 
 
 function load(self){
-  let that = self
+  wx.showLoading({
+    title: '加载中',
+  })
   wx.request({
     url: "http://www.zyylpt.com/index.php/app/prize.html",
     data: {
       uid: app.globalData.uid,
-      p: that.data.indexs*1+1
+      p: self.data.indexs*1+1
     },
     success: function (res) {
       wx.hideLoading()
@@ -122,15 +121,19 @@ function load(self){
         for (let i = 0; i < li.num;i++){
           pagenum[i]='第'+(i+1)+'页'
         }  
-        that.setData({ 
+        self.setData({ 
           rule_list_content: li.data,
           pageNum: pagenum,
           totalNam: li.num
         })
       }else{
-        that.setData({unde:true})
+        self.setData({unde:true})
       }
+      wx.stopPullDownRefresh()//停止刷新
     }
   })
 
 }
+/*onPullDownRefresh: function () {//下拉刷新
+  load(this);
+}*/

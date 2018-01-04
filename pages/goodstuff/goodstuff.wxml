@@ -1,6 +1,6 @@
 <!--pages/goodstuff/goodstuff.wxml-->
 <view class='TopBanner'>
-  <image src='../../img/jinchengtuo.png' ></image>
+  <image src='http://www.zhongyouapp.com/resources/mobile/game/img/new_byimg/jinchengtuo.png' ></image>
 </view>
 <view class='content'>
   <view class='content_text'>

@@ -6,26 +6,28 @@
       <navigator url='../game/game' open-type="redirect" class='black'><view>返回抽奖</view></navigator>
   </view>
  
-  <view class='prize_txt'>
-   本期神秘大奖是华为P10一部+神秘礼包一个！
+  
+  <view class="img_detail">
+      <view class='img_s'><image src="http://zhongyouapp.com/resources/mobile/game/img/new_pic/iphone.png" alt=""></image></view>
+      <view class="text_s">
+        <view>本期神秘大奖是<text class="c_red">iphoneX</text>一部</view>
+        <view>+</view>
+        <view><text class="c_red">神秘礼包</text>一个！</view>
+      </view>
   </view>
+  
   <view class='imglist'>
-    <view>
-      <image src='http://zhongyouapp.com/resources/mobile/game/img/new_pic/gong2.jpg'></image>
-      <image src='http://zhongyouapp.com/resources/mobile/game/img/new_pic/xi2.jpg'></image>
-      <image src='http://zhongyouapp.com/resources/mobile/game/img/new_pic/fa2.jpg'></image>
-      <image src='http://zhongyouapp.com/resources/mobile/game/img/new_pic/cai2.jpg'></image>
-      <image src='http://zhongyouapp.com/resources/mobile/game/img/new_pic/ji2.jpg'></image>
-      <image src='http://zhongyouapp.com/resources/mobile/game/img/new_pic/xiang2.jpg'></image>
-      <image src='http://zhongyouapp.com/resources/mobile/game/img/new_pic/ru2.jpg'></image>
-      <image src='http://zhongyouapp.com/resources/mobile/game/img/new_pic/yi2.jpg'></image>
-    </view>
-    <view class='listnum' >
+      <view wx:for="{{imgList}}" class='imgItem'>
+        <view>
+          <image src='http://zhongyouapp.com/resources/mobile/game/img/{{item}}'></image>
+        </view>  
+      </view>
+     <view class='listnum' > 
       <view wx:for="{{listnum}}">{{item}}个</view>
     </view>
   </view>
   
-  <view class='top_prize'>
-    <image src='http://zhongyouapp.com/resources/mobile/game/img/new_pic/duihuandajiang.png' bindtap='exchange'></image>
+  <view class='top_prize' bindtap='exchange'>
+    兑换大奖
   </view>
 </view>

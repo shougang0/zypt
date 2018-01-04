@@ -2,9 +2,11 @@
 <view class="container">
   <swiper indicator-dots="ture"  autoplay="true" interval="5000" duration="1000">
     <block wx:for="{{imgUrls}}">
-      <swiper-item>
-        <image src="{{item}}" class="slide-image" width="355" height="150"/>
-      </swiper-item>
+      <navigator url='{{item.url}}'>
+        <swiper-item>
+          <image src="{{item.imgurl}}" class="slide-image"  mode="aspectFill"/>
+        </swiper-item>
+      </navigator>  
     </block>
   </swiper>
   <view class="usermotto">
@@ -26,5 +28,8 @@
       </view>
       <text>其它</text>
     </navigator>
+  </view>
+  <view>
+  {{ username}}{{rice}}
   </view>
 </view>

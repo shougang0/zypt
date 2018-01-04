@@ -9,9 +9,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    load(this);
-   // let that=this
-    
+    load(this);    
   },
   onPullDownRefresh: function () {//下拉刷新
     load(this);
@@ -79,6 +77,7 @@ function load(self){
         let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
         self.setData({ lists: d });
       }
+      wx.stopPullDownRefresh()//停止刷新
     }
   })
 }

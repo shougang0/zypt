@@ -2,7 +2,7 @@
 <view>
 
   <view class='btnGroup'>
-    <view>奖品列表</view>
+    <view bindtap=''>奖品列表</view>
     <navigator url='../rich/rich' open-type="redirect" class='black'><view>神秘大奖</view></navigator>
     <navigator url='../game/game' open-type="redirect" class='black'><view>返回抽奖</view></navigator>
   </view>

@@ -31,7 +31,6 @@ Page({
     wx.request({
       url: app.globalData.apiBase+'index.php/weixin/login.html',
       dataType: 'json',
-
       data: c,
       success: function (res) {
         console.log(res) //登录结果
@@ -54,7 +53,7 @@ Page({
 
           app.globalData.uid = res.data.userid
           wx.switchTab({
-            url: '../index/index',
+            url: '/pages/index/index',
           })
         }
       }
