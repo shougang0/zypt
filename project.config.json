@@ -10,7 +10,9 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.6.4",
 	"appid": "wxe00316644217ab3b",
+
 	"projectname": "zyyl",
+
 	"condition": {
 		"search": {
 			"current": -1,
