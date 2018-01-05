@@ -13,7 +13,7 @@ Page({
   onLoad: function (options) {
     var that=this
     wx.request({
-      url: 'http://www.zyylpt.com/index.php/free/jiangpin.html', 
+      url: app.globalData.apiBase +'/index.php/free/jiangpin.html', 
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -28,7 +28,7 @@ Page({
   getProdut() {
     var that = this
       wx.request({
-        url: 'http://www.zyylpt.com/index.php/free/choujiang.html', //接口地址
+        url: app.globalData.apiBase+'/index.php/free/choujiang.html', //接口地址
         header: {
           'content-type': 'application/json' // 默认值
         },

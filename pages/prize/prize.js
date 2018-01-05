@@ -52,7 +52,7 @@ Page({
       detail = event.currentTarget.dataset;
      // console.log(detail)
      wx.request({
-       url: "http://www.zyylpt.com/index.php/app/getproductId.html",
+       url: app.globalData.apiBase +"/index.php/app/getproductId.html",
        data: { id: detail.id},
        success(res){
         let d = res.data.replace(/^\(|\)$/g, '');

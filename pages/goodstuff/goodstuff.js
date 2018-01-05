@@ -21,7 +21,7 @@ Page({
     let id=event.currentTarget.dataset.id;
     let that=this;
     wx.request({
-      url:"http://www.zyylpt.com/index.php/app/infodisplay.html",
+      url: app.globalData.apiBase+"/index.php/app/infodisplay.html",
       data: { uid: app.globalData.uid,id:id},
       success:function(res){
         let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
@@ -42,7 +42,7 @@ Page({
 
 function confirmEnter(id,self) {
   wx.request({
-    url: "http://www.zyylpt.com/index.php/app/chargedami.html",
+    url: app.globalData.apiBase +"/index.php/app/chargedami.html",
     data: { uid: app.globalData.uid, id: id },
     success:function(res){
       let d = res.data.replace(/^\(|\)$/g, '');
@@ -69,7 +69,7 @@ function load(self){
     title: '加载中',
   })
   wx.request({
-    url: "http://www.zyylpt.com/index.php/app/myfood.html",
+    url: app.globalData.apiBase +"/index.php/app/myfood.html",
     data: { uid: app.globalData.uid },
     success: function (res) {
       wx.hideLoading()
