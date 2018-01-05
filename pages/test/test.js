@@ -16,7 +16,8 @@ Page({
     "pages/order/order",//我的订单
     "pages/rich/rich",//神秘大奖
     "pages/address/address",//我的地址
-    "pages/test/test"//测试
+    "pages/contact/contact",//联系我们
+     "pages/activity/activity"//最新活动
    */
  /* "window": {
     "backgroundTextStyle": "light",

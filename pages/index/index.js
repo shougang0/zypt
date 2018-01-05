@@ -4,34 +4,68 @@ const app = getApp()
 var imgurl = "http://zhongyoupingtai0515.oss-cn-hongkong.aliyuncs.com/upload/image/"
 Page({
   data: {
-    imgUrls: [{ 
-        'imgurl':imgurl +'201712/81d40979-3e2f-4d2e-8d2e-11581574822a.jpg',//会员
-        'url':'/pages/game/game'    
-      },{
-        'imgurl':imgurl + '201710/7ab98854-63bc-4b5e-989a-e3686dbb5dd9.jpg',//白拿
-        'url': "/pages/free/free"
-      },{
-        'imgurl': imgurl + '201710/a41509ca-6c6d-43bd-88ee-172ea7905795.jpg',//必赢
-        'url': "/pages/free/free"
-      }, {
-        'imgurl': imgurl + '201711/7b2917c9-2914-4407-93c4-5e23aac0ece8.jpg',//职工
-        'url': "/pages/free/free"
-      }],
-    indicatorDots: true,
+    imgGroup: "",
+    iconGroup:"",  
   },
   onLoad:function(){
     let that = this;
     var info = wx.getStorageSync('ptuserinfo');
-    this.setData({ username: info.username })
+    var img = info.avatarUrl ?  info.avatarUrl:"/img/user.jpg" 
+    this.setData({ username: info.username, selfimg: img})
     wx.request({
       url: "http://www.zyylpt.com/index.php/app/index.html",
-      data: { uid: wx.getStorageSync('ptuserinfo').userid},
+      data: { uid: info.userid},
       success:function(res){
         let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
-       // console.log(res)
         that.setData({ rice: d })
       }
     })
+    wx.request({
+      url: "http://www.zyylpt.com/index.php/weixin/lunbo_and_icon.html",
+      success:function(res){
+        console.log(res.data)
+        that.setData({ imgGroup: res.data.imgGroup, iconGroup: res.data.iconGroup })
+      }
+    })
   },
+  wxlogout() {//解除绑定
+    let that = this;
+    wx.showModal({
+      title: '解除绑定', content: '确定要清除' + this.data.username + '的账号绑定么？',
+      success: function (res) {
+        //如果用户点击确定
+        if (res.confirm) {
+          wx.request({
+            url: app.globalData.apiBase + "index.php/weixin/wxlogout.html",
+            data: {
+              trd_session: app.globalData.trd_session
+            },
+            success: function (res) {
+              wx.removeStorage({
+                key: 'ptuserinfo',
+                success: function (msg) {
+                  wx.showToast({
+                    title: "账号解除绑定成功",
+                    duration: 1000,
+                    mask: true,
+                    icon: "success"
+                  }),
+                    wx.setStorageSync('flag', 2),
+                    setTimeout(function () {
+                      wx.redirectTo({
+                        url: '../welcome/welcome',
+                      })
+                    }, 1000)
+                },
+                fail: function (e) {
+                  console.log(e)
+                }
+              })
+            }
+          })
+        }
+      }
+    })
+  }
 }) 
  

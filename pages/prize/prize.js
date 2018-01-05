@@ -31,7 +31,22 @@ Page({
     }
   },
   send(event){
-    let detail = '';
+    wx.showModal({
+      title: '提示',
+      content: '功能正在开发中，请谅解。 点击确认下载APP',
+      confirmText: '确认',
+      success: function(res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: "/pages/download/download",
+          }) 
+        }
+      },
+      
+    })
+    
+
+    /*let detail = '';
     let that=this;
     if (event.currentTarget.dataset) {
       detail = event.currentTarget.dataset;
@@ -41,39 +56,35 @@ Page({
        data: { id: detail.id},
        success(res){
         let d = res.data.replace(/^\(|\)$/g, '');
-        var etdt = new Date("2017,09,29".replace(/-/g, "/")).getTime();
-        var stdt = new Date(2017, 10, 27).getTime();
-       // let s_href = "http://zhongyouapp.com/order/checkout_game?skuId=" + d.productId;
+        var info = wx.getStorageSync('ptuserinfo');//获取本地缓存
+        var cDate = new Date((info.createdDate).replace(/-/g, "/")).getTime();//注册时间
+        var stdt = new Date(2017, 9, 27).getTime();//平台关闭时间
         let s_href = "../order/order?skuId=" + d.productId;
-          if (stdt > etdt) {//开放时间大于注册时间                      
+        if (stdt > cDate) {//开放时间大于注册时间                      
             wx.navigateTo({
               url: s_href,
             }) 
           } else {
-            if (rank == 2) {
+          if (info.rank == 2) {
               wx.navigateTo({
                 url: s_href,
               }) 
-            } else if (rank == 1) {
-              if (white == 1 || white == 2) {
+          } else if (info.rank == 1) {
+            if (info.white != 1 || info.white == 2) {
                wx.navigateTo({
                  url: s_href,
                }) 
-              } else if (white == 0) {
-               if (invitationCode == 0) {
+            } else if (info.white == 0) {
+              if (invitationCode == 0) {
                  wx.navigateTo({
-                   url: "http://zhongyouapp.com/game/membertype",
+                   url: "http://zhongyouapp.com/game/membertype",//页面没有做
                  })  
-               } else if (invitationCode == 7) {
-                 if (etdt > ttmm) {
+              } else if (invitationCode == 7) {
+                 
                    wx.navigateTo({
-                     url: s_href,
+                     url: "http://zhongyouapp.com/game/membertype",//页面没有做
                    }) 
-                 } else {
-                   wx.navigateTo({
-                     url: "http://zhongyouapp.com/game/membertype",
-                   }) 
-                 }
+                 
                } else {
                  wx.navigateTo({
                    url: s_href,
@@ -84,7 +95,7 @@ Page({
          }
        }
      })
-    }
+    }*/
   },
   modalhide() { //弹出窗口
     this.setData({

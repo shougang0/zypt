@@ -52,7 +52,7 @@ Page({
           wx.setStorageSync('ptuserinfo', res.data);
 
           app.globalData.uid = res.data.userid
-          wx.switchTab({
+          wx.reLaunch({
             url: '/pages/index/index',
           })
         }

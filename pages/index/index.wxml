@@ -1,35 +1,43 @@
 <!--index.wxml-->
 <view class="container">
-  <swiper indicator-dots="ture"  autoplay="true" interval="5000" duration="1000">
-    <block wx:for="{{imgUrls}}">
-      <navigator url='{{item.url}}'>
-        <swiper-item>
-          <image src="{{item.imgurl}}" class="slide-image"  mode="aspectFill"/>
-        </swiper-item>
-      </navigator>  
+ <view class="info content_center m_10">  <!-- 用户信息-->
+    <image src="{{selfimg}}" ></image>
+    <view>
+      <view>
+        用户名{{ username}}
+      </view> 
+      <view>
+        大米余额{{rice}}斤
+      </view>
+    </view>   
+    <view bindtap='wxlogout'>
+      <text>退出 \n 账号</text>
+    </view>
+  </view>
+
+  <view class='imgG'> 
+    <swiper indicator-dots="ture"  autoplay="true" interval="5000" duration="1000" circular="true">
+      <block wx:for="{{imgGroup}}">
+        <navigator url='{{item.url}}'>
+          <swiper-item>
+            <image src="{{item.imgurl}}" class="slide-image"/>
+          </swiper-item>
+        </navigator>  
+      </block>
+    </swiper>
+  </view>
+
+  <view class="usermotto content_center ">
+    <block wx:for="{{iconGroup}}">
+      <view class='icon_item center'>
+        <navigator url='{{item.url}}'>
+          <view>
+            <image src='{{item.iconImg}}'></image>
+          </view>
+          <text>{{item.iconName}}</text>
+        </navigator> 
+      </view>    
     </block>
-  </swiper>
-  <view class="usermotto">
-    <navigator url='/pages/free/free'>
-      <view>
-        <image src='/img/108.png'></image>
-      </view>
-      <text>白拿</text>
-    </navigator> 
-    <navigator url='/pages/game/game'>
-      <view>
-        <image src='/img/108.png'></image>
-      </view>
-      <text>必赢</text>
-    </navigator>    
-    <navigator>
-      <view>
-        <image src='/img/108.png'></image>
-      </view>
-      <text>其它</text>
-    </navigator>
   </view>
-  <view>
-  {{ username}}{{rice}}
-  </view>
+
 </view>

@@ -7,15 +7,23 @@
   color: #aaa;
 }
 
-
+.info image{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+.imgG{
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
 swiper{
   width: 100%;
   height: 200px;
+  position: absolute;
+  bottom: 0;
 }
-.usermotto{
-  display: flex;
-  justify-content: space-around;
-}
+
 .usermotto image{
   width: 20pt;
   height:20pt;
@@ -26,4 +34,13 @@ swiper{
 /** 自定义其他点击态样式类 **/
 .other-navigator-hover {
     color:red;
+}
+.icon_item{
+  width: 32%;
+  border:1px solid #555;
+  box-sizing: border-box;
+  padding:62rpx 0;
+}
+.usermotto {
+ justify-content:flex-start;
 }

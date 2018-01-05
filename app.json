@@ -13,17 +13,18 @@
     "pages/order/order",
     "pages/rich/rich",
     "pages/address/address",
-    "pages/test/test",
-    "pages/contact/contact"
+    "pages/contact/contact",
+    "pages/activity/activity",
+    "pages/download/download",
+    "pages/howtoplay/howtoplay"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f00",
-    "backgroundColor":"#ccc",
+    "backgroundColor": "#ccc",
     "navigationBarTitleText": "中油平台",
     "navigationBarTextStyle": "white"
   },
-  
   "networkTimeout": {
     "uploadFile": 20000,
     "request": 20000,
