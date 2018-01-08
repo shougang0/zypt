@@ -1,17 +1,17 @@
 <!--pages/free/free.wxml-->
 <view class='free'>
-  <image src='http://zhongyouapp.com/resources/mobile/game/img/new_byimg/prize.png' class='toptitle'></image>
+  <image src='http://www.zhongyoupingtai.com/resources/mobile/game/img/new_byimg/prize.png' class='toptitle'></image>
   <view id='wrap' class='turnplate'>
     <view style='transform: rotate({{pan_rot}}deg)!important;' class='goods'>
       <view class='showItem' wx:for="{{list}}" style='transform:rotate(-{{index*18}}deg)' >
           {{item.prize_name+item.prize_attr}}
           <view>
             <image src='http://www.zyylpt.com{{item.imgurl}}'> </image>
-          </view> 
+          </view>
       </view>
     </view>
-    
-    <image src='http://zhongyouapp.com/resources/mobile/game/img/new_byimg/pointer.png' bindtap='getProdut' class="pointer"></image>
+
+    <image src='http://www.zhongyoupingtai.com/resources/mobile/game/img/new_byimg/pointer.png' bindtap='getProdut' class="pointer"></image>
     <view class='line' style='transform: rotate({{pan_rot}}deg)!important;'>
       <view style='transform:rotate(9deg)'></view>
       <view style='transform:rotate(27deg);'></view>
@@ -32,11 +32,11 @@
     </navigator>
     <navigator url='../game/game' open-type='redirect'>
       <button type='warn' size='mini'>去玩必赢</button>
-    </navigator>  
+    </navigator>
     <navigator>
       <button type='warn' size='mini' bindtap='ruleShow'>活动规则</button>
-    </navigator> 
-    
+    </navigator>
+
   </view>
   <view class='textTitle'>
     <view>
@@ -68,10 +68,10 @@
         </view>
         <view>5、本活动赞助商非苹果公司,苹果公司与本活动无关。
         </view>
-       
+
     </view>
     <view  class='colse'>
-      <button type='warn' size='mini' bindtap='rulecolse'>关闭</button> 
-    </view>  
+      <button type='warn' size='mini' bindtap='rulecolse'>关闭</button>
+    </view>
   </view>
 </view>

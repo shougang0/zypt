@@ -12,7 +12,7 @@ App({
         fail:function(){
           wxlogin();
         }
-        
+
       })
     }else{
       //无效
@@ -26,7 +26,7 @@ App({
         success: function (res) {
           if (res.code) {
             var code = res.code;
-      
+
             wx.request({
               url: that.globalData.apiBase+"index.php/weixin/weixinapi.html",
               header: {
@@ -92,7 +92,7 @@ App({
     })
   },
   globalData: {
-    apiBase: "http://www.zyylpt.com/",
+    apiBase: "http://www.zhongyoupingtai.com/",
     trd_session:"",
     userInfo: null,
     uid: "",

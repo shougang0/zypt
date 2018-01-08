@@ -117,7 +117,7 @@ function load(self){
     title: '加载中',
   })
   wx.request({
-    url: "http://www.zyylpt.com/index.php/app/prize.html",
+    url: app.globalData.apiBase+"/index.php/app/prize.html",
     data: {
       uid: app.globalData.uid,
       p: self.data.indexs*1+1
