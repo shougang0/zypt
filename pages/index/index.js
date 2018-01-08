@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-var imgurl = "https://zhongyoupingtai0515.oss-cn-hongkong.aliyuncs.com/upload/image/"
+var imgurl = "http://zhongyoupingtai0515.oss-cn-hongkong.aliyuncs.com/upload/image/"
 Page({
   data: {
     imgGroup: "",
@@ -12,7 +12,6 @@ Page({
     let that = this;
     var info = wx.getStorageSync('ptuserinfo');
     var img = info.avatarUrl ?  info.avatarUrl:"/img/user.jpg" 
-
     this.setData({ username: info.username, selfimg: img})
     wx.request({
       url: app.globalData.apiBase +"/index.php/app/index.html",
@@ -83,5 +82,4 @@ Page({
       }
     })
   }
-}) 
- 
+})

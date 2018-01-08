@@ -1,7 +1,7 @@
 <view>
 
   <view class='TopBanner'>
-    <image src='http://www.zhongyouapp.com/resources/mobile/game/img/new_byimg/title.png' ></image>
+    <image src='http://www.zhongyoupingtai.com/resources/mobile/game/img/new_byimg/title.png' ></image>
   </view>
 
   <!-- 图片列表 -->
@@ -10,9 +10,9 @@
      data-cot="{{item.good_name}}" data-url="{{item.img_url}}" >
         <image src='http://www.zyylpt.com{{item.img_url}}' mode='scaleToFill' wx:if="{{idx%2==0}}"
          class='{{idx==showNnm?"opacity_0":""}}'></image>
-        <image src='http://www.zyylpt.com{{item.img_url}}' mode='scaleToFill' wx:else  
+        <image src='http://www.zyylpt.com{{item.img_url}}' mode='scaleToFill' wx:else
          class='bg_f5  {{idx==showNnm?"opacity_0":""}}'></image>
-     </view> 
+     </view>
   </view>
 
 </view>
@@ -37,7 +37,7 @@
       {{modaltitle}}
     </view>
     <view class='img_container'>
-       <image src='http://www.zyylpt.com{{imgUrl}}'></image>   
+       <image src='http://www.zyylpt.com{{imgUrl}}'></image>
     </view>
     <view class='center' wx:if="{{one_prize}}">
       {{modaltitle}}
@@ -48,8 +48,8 @@
     <view  class='colse content_center m_10'>
         <view wx:if="{{one_prize}}"  class='btn'><navigator url='../prize/prize' open-type="redirect">查看奖品</navigator></view>
         <!-- <view wx:else class='btn'>查看奖品</view> -->
-        <view bindtap='modalhide' class='btn'>关闭</view> 
-    </view>  
+        <view bindtap='modalhide' class='btn'>关闭</view>
+    </view>
   </view>
 </view>
 
@@ -59,15 +59,15 @@
     <view class='modal-title' >
       恭喜您中得
     </view>
-    <view class='tenImg content_center m_10'>  
+    <view class='tenImg content_center m_10'>
       <view class='' wx:for="{{imgUrl}}">
-        <image src='http://www.zyylpt.com{{item.img_url}}'></image>   
+        <image src='http://www.zyylpt.com{{item.img_url}}'></image>
       </view>
     </view>
     <view  class='colse content_center m_10'>
-      <view   class='btn'><navigator url='../prize/prize' open-type="redirect">查看奖品</navigator></view>        
-      <view bindtap='modalhide' class='btn'>关闭</view>  
-    </view>  
+      <view   class='btn'><navigator url='../prize/prize' open-type="redirect">查看奖品</navigator></view>
+      <view bindtap='modalhide' class='btn'>关闭</view>
+    </view>
   </view>
 </view>
 <view class="modal modal_opacity" wx:if="{{isbegin}}">
