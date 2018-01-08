@@ -25,7 +25,7 @@ Page({
   },
   exchange(){
     wx.request({
-      url: app.globalData.apiBase +"index.php/app/openprize.html",
+      url: app.globalData.apiBase+"/index.php/app/openprize.html",
       data: { uid: app.globalData.uid },
       success:function(res){
         let lists = res.data.replace(/^\(|\)$/g, '');

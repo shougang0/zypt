@@ -30,6 +30,7 @@ Page({
     let that=this;
     wx.request({
       url: app.globalData.apiBase +"index.php/app/infodisplay.html",
+
       data: { uid: app.globalData.uid,id:id},
       success:function(res){
         let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
@@ -78,6 +79,7 @@ function load(self){
   })
   wx.request({
     url: app.globalData.apiBase +"index.php/app/myfood.html",
+
     data: { uid: app.globalData.uid },
     success: function (res) {
       wx.hideLoading()

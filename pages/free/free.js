@@ -35,6 +35,7 @@ Page({
     var that = this
       wx.request({
         url: app.globalData.apiBase+'index.php/free/choujiang.html', //接口地址
+
         header: {
           'content-type': 'application/json' // 默认值
         },
