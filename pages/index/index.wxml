@@ -1,17 +1,17 @@
 <!--index.wxml-->
 <view class="container">
- <view class="info content_center m_10">  <!-- 用户信息-->
-    <image src="{{selfimg}}" ></image>
-    <view>
-      <view>
-        用户名{{ username}}
+ <view class="info content_center">  <!-- 用户信息-->
+    <image src="{{selfimg}}" style='margin-left:-50rpx;'></image>
+    <view style='margin-left:-100rpx;'>
+      <view class='username'>
+        {{ username}}
       </view> 
-      <view>
-        大米余额{{rice}}斤
+      <view class='rice'>
+        我的中油米：{{rice}}斤
       </view>
     </view>   
-    <view bindtap='wxlogout'>
-      <text>退出 \n 账号</text>
+    <view bindtap='wxlogout'  class='loginout' wx:if='{{islogin}}'>
+      <text>退出\n账号</text>
     </view>
   </view>
 
@@ -29,15 +29,20 @@
 
   <view class="usermotto content_center ">
     <block wx:for="{{iconGroup}}">
-      <view class='icon_item center'>
-        <navigator url='{{item.url}}'>
-          <view>
+
+      <view class='icon_item item' >
+         <navigator url='{{item.url}}' ><!--//open-type="redirect" -->
+          <view class='icon_img'>
             <image src='{{item.iconImg}}'></image>
           </view>
           <text>{{item.iconName}}</text>
         </navigator> 
-      </view>    
+      </view>  
     </block>
   </view>
-
+  <view class='tabBar'>
+  
+    <view><image src='/img/home.png'></image></view>
+    <view class='text'>首页</view> 
+  </view>
 </view>

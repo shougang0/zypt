@@ -13,7 +13,7 @@ Page({
   onLoad: function (options) {
     var that=this
     wx.request({
-      url: 'http://www.zyylpt.com/index.php/free/jiangpin.html', 
+      url: app.globalData.apiBase+'index.php/free/jiangpin.html', 
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -26,9 +26,15 @@ Page({
   },
   
   getProdut() {
+    /*var info = wx.getStorageSync('flag');
+    if (info == 3) {
+      util.islogin();
+    } else {
+      
+    }*/
     var that = this
       wx.request({
-        url: 'http://www.zyylpt.com/index.php/free/choujiang.html', //接口地址
+        url: app.globalData.apiBase+'index.php/free/choujiang.html', //接口地址
         header: {
           'content-type': 'application/json' // 默认值
         },
@@ -36,9 +42,7 @@ Page({
           id: app.globalData.uid
         },
         dataType: 'json',
-        success: function (res) {
-
-          
+        success: function (res) {  
           if (res.data){
             let d = JSON.parse(res.data.replace(/^\(|\)$/g, '')); 
            if (d['nk'] == 'nointval' || d['nk'] == 'funointval') {
@@ -76,11 +80,6 @@ Page({
       })
   },
 
-  /*wx.showToast({
-                  title: '未到抽奖时间',
-                  icon: 'waiting',
-                  duration: 2000,
-                })*/
   rulecolse(){
     this.setData({isrule:false})
   },

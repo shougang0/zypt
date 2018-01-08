@@ -26,6 +26,12 @@ Page({
   },
   one_prize(){ 
     if (!app.globalData.trd_session) return //一次抽奖
+    /*var info = wx.getStorageSync('flag');
+    if (info != 3) {//判断是否登录
+      util.islogin();
+    } else {
+      load(this);
+    }*/
     Twinkle(this)
     let that=this;
     wx.request({

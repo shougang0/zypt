@@ -5,28 +5,35 @@ var imgurl = "http://zhongyoupingtai0515.oss-cn-hongkong.aliyuncs.com/upload/ima
 Page({
   data: {
     imgGroup: "",
-    iconGroup:"",  
+    iconGroup:"", 
+    islogin:true 
   },
   onLoad:function(){
     let that = this;
     var info = wx.getStorageSync('ptuserinfo');
     var img = info.avatarUrl ?  info.avatarUrl:"/img/user.jpg" 
-    this.setData({ username: info.username, selfimg: img})
-    wx.request({
-      url: "http://www.zyylpt.com/index.php/app/index.html",
-      data: { uid: info.userid},
-      success:function(res){
-        let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
-        that.setData({ rice: d })
-      }
-    })
-    wx.request({
-      url: "http://www.zyylpt.com/index.php/weixin/lunbo_and_icon.html",
-      success:function(res){
-        console.log(res.data)
+    this.setData({ username: info.username, selfimg: img })
+    
+    wx.request({//展示的图标及bannar
+      url: app.globalData.apiBase+"index.php/weixin/lunbo_and_icon.html",
+      success: function (res) {
         that.setData({ imgGroup: res.data.imgGroup, iconGroup: res.data.iconGroup })
       }
-    })
+    })  
+  },
+  onShow: function () {
+    let that = this;
+    var info = wx.getStorageSync('ptuserinfo');
+    if (info != "") {
+      wx.request({ //获取用户大米
+        url: app.globalData.apiBase + "index.php/app/index.html",
+        data: { uid: info.userid },
+        success: function (res) {
+          let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
+          that.setData({ rice: d, islogin: true })
+        }
+      })
+    }
   },
   wxlogout() {//解除绑定
     let that = this;

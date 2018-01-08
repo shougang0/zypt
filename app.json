@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/welcome/welcome",
     "pages/register/register",
     "pages/logs/logs",
-    "pages/index/index",
+    
     "pages/my/my",
     "pages/game/game",
     "pages/prize/prize",

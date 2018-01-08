@@ -1,11 +1,11 @@
 Page({
     onTapJump2: function (event) {
-      wx.redirectTo({
+      wx.redirectTo({ //新用户注册
         url: '../register/register',
       });
     },
     onTapJump3: function (event) {
-      wx.redirectTo({
+      wx.redirectTo({//老用户登录
         url: "../logs/logs",
       });
     },

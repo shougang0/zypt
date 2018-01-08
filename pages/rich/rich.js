@@ -15,7 +15,7 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: "http://www.zyylpt.com/index.php/app/suprize.html",
+      url: app.globalData.apiBase +"index.php/app/suprize.html",
       data: { uid: app.globalData.uid},
       success: function (res){
         let lists = res.data.replace(/^\(|\)$/g, '');
@@ -25,7 +25,7 @@ Page({
   },
   exchange(){
     wx.request({
-      url: "http://www.zyylpt.com/index.php/app/openprize.html",
+      url: app.globalData.apiBase +"index.php/app/openprize.html",
       data: { uid: app.globalData.uid },
       success:function(res){
         let lists = res.data.replace(/^\(|\)$/g, '');

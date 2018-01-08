@@ -11,15 +11,13 @@ App({
         },
         fail:function(){
           wxlogin();
-        }
-        
+        }  
       })
     }else{
       //无效
       wxlogin();
     }
-
-
+    
     function wxlogin(){
       // 登录
       wx.login({
@@ -91,12 +89,13 @@ App({
       }
     })
   },
+  
   globalData: {
     apiBase: "http://www.zyylpt.com/",
     trd_session:"",
-    userInfo: null,
-    uid: "",
+   // userInfo: null,
+    uid: "2", 
     userid: null,
-    username: null
+   //username: null
   }
 })
