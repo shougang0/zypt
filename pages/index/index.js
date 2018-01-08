@@ -68,7 +68,7 @@ Page({
                     wx.setStorageSync('flag', 2),
                     setTimeout(function () {
                       wx.redirectTo({
-                        url: '../welcome/welcome',
+                        url: '../index/index',
                       })
                     }, 1000)
                 },
