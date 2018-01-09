@@ -6,6 +6,7 @@ Page({
     logs: []
   },
   onLoad: function () {
+    this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
     if (wx.getStorageSync('flag')==3){
       wx.switchTab({
         url: '../index/index',

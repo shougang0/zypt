@@ -10,6 +10,7 @@ Page({
       });
     },
   onLoad(){
+    this.setData({ baseUrl: app.globalData.apiBase })
     var state=wx.getStorageSync('flag')
     if(state==3){
       wx.reLaunch({//switchTab

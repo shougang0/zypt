@@ -1,4 +1,5 @@
 // pages/activity/activity.js
+var app = getApp();
 Page({
 
   /**
@@ -6,5 +7,8 @@ Page({
    */
   data: {
   
-  },
+  }, 
+  onLoad(){
+    this.setData({ baseUrl: app.globalData.apiBase })
+  }
 })

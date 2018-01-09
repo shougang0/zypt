@@ -38,11 +38,11 @@ App({
                 //获取openid
                 wx.setStorageSync('flag', res.data.code)
                 wx.setStorageSync('trd_session', res.data.trd_session);
-
+                that.globalData.trd_session = res.data.trd_session;
                 if (res.data.code == 3) {
                   wx.setStorageSync('ptuserinfo', res.data.ptuserinfo);
                   that.globalData.uid = res.data.ptuserinfo.userid;
-                  that.globalData.trd_session = res.data.trd_session
+                 
                   //console.log('有效1');
                   // wx.switchTab({
                   //   url: 'pages/index/index',
@@ -92,7 +92,7 @@ App({
   },
   
   globalData: {
-    apiBase: "http://www.zhongyoupingtai.com/",
+    apiBase: "https://www.zhongyoupingtai.com/",
     trd_session:"",
    // userInfo: null,
     uid: "2", 

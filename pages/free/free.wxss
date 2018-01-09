@@ -5,7 +5,7 @@ view,text{
 .free {
    width: 100%;
    min-height: 1200rpx;
-   background: url("http://www.zhongyoupingtai.com/resources/mobile/game/img/new_byimg/bg.png");
+   background: url("https://www.zhongyoupingtai.com/resources/mobile/game/img/new_byimg/bg.png");
   background-size: 100% 100%;
 }
 .toptitle{
@@ -19,7 +19,7 @@ view,text{
   margin: 0 auto;
   width: 700rpx;
   height:700rpx;
-  background: url("http://www.zhongyoupingtai.com/resources/mobile/game/img/new_byimg/round.gif");
+  background: url("https://www.zhongyoupingtai.com/resources/mobile/game/img/new_byimg/round.gif");
   background-size: 100% ;
 }
 .free .btnGroup{

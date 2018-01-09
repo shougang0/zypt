@@ -8,7 +8,7 @@
 
 
   <view class="img_detail">
-      <view class='img_s'><image src="http://www.zhongyoupingtai.com/resources/mobile/game/img/new_pic/iphone.png" alt=""></image></view>
+      <view class='img_s'><image src="{{baseUrl}}resources/mobile/game/img/new_pic/iphone.png" alt=""></image></view>
       <view class="text_s">
         <view>本期神秘大奖是<text class="c_red">iphoneX</text>一部</view>
         <view>+</view>
@@ -19,7 +19,7 @@
   <view class='imglist'>
       <view wx:for="{{imgList}}" class='imgItem'>
         <view>
-          <image src='http://www.zhongyoupingtai.com/resources/mobile/game/img/{{item}}'></image>
+          <image src='{{baseUrl}}resources/mobile/game/img/{{item}}'></image>
         </view>
       </view>
      <view class='listnum' >

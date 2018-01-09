@@ -1,12 +1,12 @@
 //index.js
 //获取应用实例
 const app = getApp()
-var imgurl = "http://zhongyoupingtai0515.oss-cn-hongkong.aliyuncs.com/upload/image/"
+var imgurl = "https://zhongyoupingtai0515.oss-cn-hongkong.aliyuncs.com/upload/image/"
 Page({
   data: {
     imgGroup: "",
     iconGroup:"", 
-    islogin:true 
+    islogin:false 
   },
   onLoad:function(){
     let that = this;
@@ -25,11 +25,13 @@ Page({
       url: app.globalData.apiBase +"/index.php/weixin/lunbo_and_icon.html",
       success:function(res){
         console.log(res.data)
-        that.setData({ imgGroup: res.data.imgGroup, iconGroup: res.data.iconGroup })
+        that.setData({ imgGroup: res.data.imgGroup, 
+          iconGroup: res.data.iconGroup ,
+        })
       }
     })  
   },
-  onShow: function () {
+  onShow: function () { //页面切换显示大米
     let that = this;
     var info = wx.getStorageSync('ptuserinfo');
     if (info != "") {

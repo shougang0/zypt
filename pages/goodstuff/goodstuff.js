@@ -11,8 +11,9 @@ Page({
    */
   onLoad: function () {
    // console.log(util)
+    this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
     var info = wx.getStorageSync('flag');
-    if (info!=3){//判断是否登录
+    if (info!=3){  //判断是否登录
       util.islogin();
     }else{
       load(this);   
@@ -22,7 +23,7 @@ Page({
   onPullDownRefresh: function () {//下拉刷新
     load(this);
   },
-  change_: function (event) {
+  change_: function (event) {//换米逻辑
     wx.showLoading({
       title: '加载中',
     })
@@ -30,8 +31,7 @@ Page({
     let that=this;
     wx.request({
       url: app.globalData.apiBase +"index.php/app/infodisplay.html",
-
-      data: { uid: app.globalData.uid,id:id},
+      data: { uid: app.globalData.uid,id:id},//用户id和产品id
       success:function(res){
         let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
         wx.hideLoading()
@@ -44,12 +44,13 @@ Page({
             }
           },
         })
-      }
+      },
+      
     })
   }, 
 })
 
-function confirmEnter(id,self) {
+function confirmEnter(id,self) {//确认换米
   wx.request({
     url: app.globalData.apiBase +"index.php/app/chargedami.html",
     data: { uid: app.globalData.uid, id: id },
@@ -64,22 +65,16 @@ function confirmEnter(id,self) {
             self.onLoad()
           }
         })
-        /*wx.showModal({
-          content: '兑换成功',
-          showCancel:false,
-          
-        })*/
       }      
     }
   })  
 }
-function load(self){
+function load(self){//加载数据
   wx.showLoading({
     title: '加载中',
   })
   wx.request({
     url: app.globalData.apiBase +"index.php/app/myfood.html",
-
     data: { uid: app.globalData.uid },
     success: function (res) {
       wx.hideLoading()
@@ -88,6 +83,9 @@ function load(self){
         self.setData({ lists: d });
       }
       wx.stopPullDownRefresh()//停止刷新
+    },
+    fail: function () {
+      wx.hideLoading();
     }
   })
 }

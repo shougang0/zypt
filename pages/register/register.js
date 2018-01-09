@@ -8,5 +8,7 @@ Page({
   
   },
 
-  
+  onLoad(){
+    this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
+  }  
 })

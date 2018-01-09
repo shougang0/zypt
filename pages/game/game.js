@@ -1,4 +1,5 @@
 var app = getApp();
+var util = require('../t.js');
 var begin = null;
 Page({
   data: {
@@ -15,6 +16,7 @@ Page({
     showNnm:null,
   },
   onLoad () {
+    this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
     let that=this
     wx.request({
       url: app.globalData.apiBase+"index.php/app/jiangpin.html", 
@@ -25,83 +27,92 @@ Page({
     })
   },
   one_prize(){ 
-    if (!app.globalData.trd_session) return //一次抽奖
-    /*var info = wx.getStorageSync('flag');
+    //if (!app.globalData.trd_session) return //一次抽奖
+    var info = wx.getStorageSync('flag');
     if (info != 3) {//判断是否登录
       util.islogin();
-    } else {
-      load(this);
-    }*/
-    Twinkle(this)
-    let that=this;
-    wx.request({
-      url: app.globalData.apiBase+"index.php/weixin/playone.html",
-      data:{
-        trd_session: app.globalData.trd_session
-      },
-      success:function(res){
-        console.log(res.data)
-        if (res.data.errmsg) return that.setData({ isbegin: false }) 
-        clearInterval(begin); 
-        var d = res.data.replace(/^\(|\)$/g, '');
-        if(d==0){
-          wx.showModal({
-            title: '',
-            content: '您的大米不足',
-          })
-        }else { 
-          d=JSON.parse(d); 
-          that.setData({ 
-            modaltitle: d.good_name, 
-            imgUrl: d.img_url,
-            price: d.market_price,
-            one_prize: true,  
-            ismodal: true //模态框
-          })
+    } else {  
+      if (!app.globalData.trd_session) {//一次抽奖
+        return
+      } 
+      Twinkle(this)
+      let that=this;
+      wx.request({
+        url: app.globalData.apiBase+"index.php/weixin/playone.html",
+        data:{
+          trd_session: app.globalData.trd_session
+        },
+        success:function(res){
+          console.log(res.data)
+          if (res.data.errmsg) return that.setData({ isbegin: false }) 
+          clearInterval(begin); 
+          var d = res.data.replace(/^\(|\)$/g, '');
+          if(d==0){
+            wx.showModal({
+              title: '',
+              content: '您的大米不足',
+            })
+          }else { 
+            d=JSON.parse(d); 
+            that.setData({ 
+              modaltitle: d.good_name, 
+              imgUrl: d.img_url,
+              price: d.market_price,
+              one_prize: true,  
+              ismodal: true //模态框
+            })
+          }
+          that.setData({isbegin: false }) 
+        },
+        fail: function (error) {
+          that.setData({ isbegin: false }) //遮罩层
+          console.log(error)
         }
-        that.setData({isbegin: false }) 
-      },
-      fail: function (error) {
-        that.setData({ isbegin: false }) //遮罩层
-        console.log(error)
-      }
-
-    })
+      })
+    }
   },
   ten_prize(){
-    if (!app.globalData.trd_session) return //抽奖
-    Twinkle(this)
-    let that = this;
-    wx.request({
-      url: app.globalData.apiBase +"index.php/weixin/ten.html",
-      data: {
-        trd_session: app.globalData.trd_session
-      },
-      success: function (res) {
-        if (res.data.errmsg) return that.setData({ isbegin: false }) 
-        clearInterval(begin);
-        let d = res.data.replace(/^\(|\)$/g, '');
-        if (d == 0) {
-          wx.showModal({
-            title: '',
-            content: '您的大米不足',
-          })
-        } else {
-          d = JSON.parse(d)
+   // if (!app.globalData.trd_session) return //抽奖
+    var info = wx.getStorageSync('flag');
+    if (info != 3) {
+      util.islogin();//判断是否是登录状态
+    }else{
+      if (!app.globalData.trd_session) {//一次抽奖
+        return
+      } 
+      Twinkle(this)
+      let that = this;
+      wx.request({
+        url: app.globalData.apiBase +"index.php/weixin/ten.html",
+        data: {
+          trd_session: app.globalData.trd_session
+        },
+        success: function (res) {
+          if (res.data.errmsg) return that.setData({ isbegin: false }) 
+          clearInterval(begin);
+          let d = res.data.replace(/^\(|\)$/g, '');
+          if (d == 0) {
+            wx.showModal({
+              title: '',
+              content: '您的大米不足',
+            })
+          } else {
+            d = JSON.parse(d)
+            that.setData({
+              imgUrl: d,            
+              ten_prize: true      
+            })
+          }
           that.setData({
-            imgUrl: d,            
-            ten_prize: true      
+            isbegin: false
           })
+        },
+        fail: function (error) {
+          that.setData({ isbegin: false }) //遮罩层
+          console.log(error)
         }
-        that.setData({
-          isbegin: false
-        })
-      },
-      fail: function (error) {
-        that.setData({ isbegin: false }) //遮罩层
-        console.log(error)
-      }
-    })
+      })
+    }
   },
   free(){  //白拿跳转
     wx.redirectTo({

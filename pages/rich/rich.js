@@ -1,5 +1,6 @@
 // pages/rich/rich.js
 var app = getApp();
+var util = require('../t.js');
 Page({
 
   /**
@@ -13,6 +14,7 @@ Page({
       
   },
   onLoad: function (options) {
+    this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
     var that = this
     wx.request({
       url: app.globalData.apiBase +"index.php/app/suprize.html",
@@ -24,18 +26,24 @@ Page({
     })
   },
   exchange(){
-    wx.request({
-      url: app.globalData.apiBase+"/index.php/app/openprize.html",
-      data: { uid: app.globalData.uid },
-      success:function(res){
-        let lists = res.data.replace(/^\(|\)$/g, '');
-        let d = JSON.parse(lists)
-        if (d.code == 400) {
-          wx.showModal({
-            content:"未集齐八个字的祝福字，快去必赢吧。",
-          })
+    var info = wx.getStorageSync('flag');
+    if (info != 3) {
+      util.islogin();//判断是否是登录状态
+    } else {
+      wx.request({
+        url: app.globalData.apiBase + "/index.php/app/openprize.html",
+        data: { uid: app.globalData.uid },
+        success: function (res) {
+          let lists = res.data.replace(/^\(|\)$/g, '');
+          let d = JSON.parse(lists)
+          if (d.code == 400) {
+            wx.showModal({
+              content: "未集齐八个字的祝福字，快去必赢吧。",
+            })
+          }
         }
-      }
-    })
+      })
+    }
+    
   }
 })

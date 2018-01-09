@@ -1,1 +1,4 @@
 /* pages/activity/activity.wxss */
+.container{
+      background-color: #F72526;
+}

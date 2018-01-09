@@ -1,6 +1,6 @@
 /* pages/contact/contact.wxss */
 .content{
-  background: url('http://www.zhongyoupingtai.com/resources/mobile/shop/images/new-img/us.jpg');
+  background: url('https://www.zhongyoupingtai.com/resources/mobile/shop/images/new-img/us.jpg');
   background-size: 100%;
   color:#fff;
   height: 100%;

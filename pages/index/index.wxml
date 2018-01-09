@@ -13,6 +13,9 @@
     <view bindtap='wxlogout'  class='loginout' wx:if='{{islogin}}'>
       <text>退出\n账号</text>
     </view>
+    <view wx:else class='loginout'>
+       <navigator url="../welcome/welcome" open-type='redirect'> <text >登录\n账号</text>  </navigator>   
+    </view>
   </view>
 
   <view class='imgG'> 

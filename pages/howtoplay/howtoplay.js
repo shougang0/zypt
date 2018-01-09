@@ -1,4 +1,5 @@
 // pages/howtoplay/howtoplay.js
+var app = getApp();
 Page({
 
   /**
@@ -8,6 +9,7 @@ Page({
   
   },
   onLoad: function (options) {
+    this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
     let that = this;
     /*wx.request({
       url: "",

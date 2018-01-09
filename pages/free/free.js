@@ -1,4 +1,5 @@
 var app = getApp();
+var util = require('../t.js');
 Page({
   data: {
     list:[],
@@ -11,6 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
     var that=this
     wx.request({
       url: app.globalData.apiBase+'index.php/free/jiangpin.html', 
@@ -25,16 +27,14 @@ Page({
     })
   },
   
-  getProdut() {
-    /*var info = wx.getStorageSync('flag');
-    if (info == 3) {
-      util.islogin();
+  getProdut() {//开始抽奖
+    var info = wx.getStorageSync('flag');
+    if (info != 3) {
+      util.islogin();//判断是否是登录状态
     } else {
-      
-    }*/
-    var that = this
+      var that = this
       wx.request({
-        url: app.globalData.apiBase+'index.php/free/choujiang.html', //接口地址
+        url: app.globalData.apiBase + 'index.php/free/choujiang.html', //接口地址
 
         header: {
           'content-type': 'application/json' // 默认值
@@ -43,29 +43,29 @@ Page({
           id: app.globalData.uid
         },
         dataType: 'json',
-        success: function (res) {  
-          if (res.data){
-            let d = JSON.parse(res.data.replace(/^\(|\)$/g, '')); 
-           if (d['nk'] == 'nointval' || d['nk'] == 'funointval') {
+        success: function (res) {
+          if (res.data) {
+            let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
+            if (d['nk'] == 'nointval' || d['nk'] == 'funointval') {
               wx.showModal({
-               // title: '465456464',
+                // title: '465456464',
                 showCancel: false,
-                content: "距离下次抽奖时间还有" + d['time'] +"分钟",  
+                content: "距离下次抽奖时间还有" + d['time'] + "分钟",
               })
             } else if (d[0] == 'needanswer') {
               wx.showModal({
                 title: '答题',
                 content: "needanswer",
               })
-            } else {    
+            } else {
               let rot = 360 + d[1] * 18 + 2 * 360; //要旋转的角度
               that.setData({ pan_rot: rot });
-              setTimeout(function(){
+              setTimeout(function () {
                 wx.showModal({
                   showCancel: false,
                   title: '提示',
                   content: "恭喜您抽中" + d[4],
-                 /* confirmText:"查看余粮",
+                  /* confirmText:"查看余粮",
                   success:function(res){
                     if (res.confirm) {
                       wx.navigateTo({
@@ -74,11 +74,13 @@ Page({
                     }
                   }*/
                 })
-              },5000)             
-            } 
-          }   
+              }, 5000)
+            }
+          }
         }
       })
+    }
+    
   },
 
   rulecolse(){

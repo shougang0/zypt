@@ -1,5 +1,6 @@
 // 抽中产品列表
 var app = getApp();
+var util = require('../t.js');
 Page({
   data: {
     rule_list_content:"",
@@ -13,10 +14,21 @@ Page({
   },
 
   onLoad () {
-    load(this)//加载数据
+    var info = wx.getStorageSync('flag');
+    if (info != 3) {
+      util.islogin();//判断是否是登录状态
+    } else{
+      load(this)//加载数据
+    }
+   
   },
   onPullDownRefresh () {//下拉刷新
-    load(this);
+    var info = wx.getStorageSync('flag');
+    if (info != 3) {
+      util.islogin();//判断是否是登录状态
+    } else {
+      load(this)//加载数据
+    }
   },
   showdetail(event){//显示商品的详情
     let detail = [];

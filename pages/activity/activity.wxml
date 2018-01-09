@@ -1,2 +1,4 @@
 <!--pages/activity/activity.wxml-->
-<text>最新活动页面介绍</text>
+<view class='container'>  
+   <image src="{{baseUrl}}new/img/activity.jpg"></image>
+</view>

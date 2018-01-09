@@ -1,6 +1,6 @@
 <!--logs.wxml-->
 <view class="log-list">
-<image class="avatar" src="http://zhongyouapp.com/resources/mobile/shop/images/new-img/login-logo.png"></image>
+<image class="avatar" src="{{baseUrl}}resources/mobile/shop/images/new-img/login-logo.png"></image>
   <form bindsubmit="formSubmit" bindreset="formReset">
     <view class="section">
       <text class="section__title">用户名</text>

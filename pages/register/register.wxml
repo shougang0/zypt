@@ -1,2 +1,2 @@
 <!--register.wxml-->
-<web-view src="http://www.zhongyouapp.com/member/register"></web-view>
+<web-view src="{{baseUrl}}member/register"></web-view>
