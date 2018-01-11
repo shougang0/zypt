@@ -1,1 +1,27 @@
 /* pages/download/download.wxss */
+.container{
+  padding: 10px;
+}
+.img{
+  width: 100px;
+  height: 120px;
+  margin:10px auto;
+}
+.tip{
+  margin:10px auto;
+  height: 220px;
+}
+.tiptext{
+  color: red;
+  text-align: center;
+  border-top: 1px solid ;
+  margin-top: 80px;
+  padding-top: 10px;
+}
+
+
+
+
+
+
+

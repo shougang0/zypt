@@ -1,0 +1,7 @@
+<!--pages/register/agreement/agreement.wxml-->
+<web-view > 
+   <iframe name="mainframe" style="height: 1154px; width: 300px" src="https://www.zhongyoupingtai.com/new/page/index.html" frameborder="0" scrolling="no"> </iframe> 
+</web-view>
+
+
+

@@ -19,7 +19,6 @@
       <view class='m_l_15'>中奖时间</view>
       <view>寄送</view>
     </view>
-    <text  data-id="{{item.id}}" bindtap='send'>寄送</text>
     <view class='rule_list_content '>
       <view wx:if="{{unde}}" class='center'>您的奖品列表为空！！</view>
       <view  wx:for="{{rule_list_content}}" class=''><!--//>奖品列表-->
@@ -39,7 +38,6 @@
         </view>
       </picker>
     </view>  
-     <!-- // <text wx:for="{{pageNum}}">第{{index}}页</text>     -->
   </view>
 
 </view>

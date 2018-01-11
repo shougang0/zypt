@@ -45,23 +45,15 @@ Page({
   send(event){
     wx.showModal({
       title: '提示',
-      content: '功能正在开发中，请谅解。 点击确认下载APP',
+      content: '功能正在开发中，请谅解。 点击识别二维码下载APP',
       confirmText: '确认',
       success: function(res) {
         if (res.confirm) {
-          // wx.navigateTo({
-          //   url: "/pages/download/download",
-          // }) 
-          wx.downloadFile({
-            url: 'https://example.com/audio/123', //仅为示例，并非真实的资源
-            //url: 'https://wwww.zhongyoupingtai.com/new/Android.apk',
-            success: function(res) {
-              console.log(res)
-            },
-          })
+          wx.navigateTo({
+            url: "/pages/download/download",
+          }) 
         }
-      },
-      
+      },  
     })
     
 

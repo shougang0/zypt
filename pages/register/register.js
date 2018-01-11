@@ -71,7 +71,8 @@ Page({
               title: '提示',
               content: '您的手机号码已注册，如忘记密码请找回',
               showCancel: false,
-            })                        
+            }) 
+            this.setData({ disabled: true })  //禁用                       
           } else if (res.data.result == 0) {
             that.setData({ disabled: false })  //移除禁用
           }
@@ -112,14 +113,6 @@ Page({
     if (password == undefined || password=="") {
       wx.showToast({
         title: "密码为空",
-        duration: 1000,
-        icon: 'loading',
-      })
-      return
-    }
-    if (invcode == undefined  || invcode == "" ) {
-      wx.showToast({
-        title: "邀请码长度不对",
         duration: 1000,
         icon: 'loading',
       })
@@ -176,5 +169,10 @@ Page({
   //获取邀请码值
   chenkInvCode(e){
     this.setData({ invcode: e.detail.value })
+  },
+  agreement(){
+    wx.navigateTo({
+      url: '/pages/register/agreement/agreement',
+    })
   }
 })

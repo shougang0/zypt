@@ -27,6 +27,10 @@
   </view>
   <view class="text-center">
     <button type='warn' size="mini" bindtap='register'>同意以下协议并注册</button>
+    <view bindtap='agreement'>
+      注册协议
+    </view>
+    <!-- <a href="${base}/article/detail/1_1" target="_blank">注册协议</a> -->
     <!-- <web-view src='https://www.zhongyouapp.com/article/detail/1_1' >注册协议
     </web-view> -->
   </view>

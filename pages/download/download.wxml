@@ -1,6 +1,17 @@
+<view class='container'>
+  <view class='text-center'>
+    <text >
+      点击下方二维码，成全屏状态\n 长按图片，点击'识别图中二维码'
+    </text>
+  </view>
+  <view class='img'>
+    <image src="/img/appDownload.jpg"></image>
+  </view>
+  <view class='tiptext'>温馨提示:记得点击普通下载。高速下载的是下载器</view>
+  <view class='tip'>
+    
+    <!-- <image src="http://www.zhongyoupingtai.com/new/wchat/tipdown.jpg"></image> -->
+  </view>
+</view>
 
 
-<!-- <web-view src="http://2bai.co/15303042"></web-view> -->
-<!-- <web-view src="https://xz.2bai.org/15303042"></web-view> -->
-
-<web-view src="http://2bai.co/15303042"></web-view>

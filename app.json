@@ -1,12 +1,9 @@
 {
   "pages": [
-    
-
     "pages/index/index",
     "pages/welcome/welcome",
     "pages/register/register",
     "pages/logs/logs",
-    
     "pages/my/my",
     "pages/game/game",
     "pages/prize/prize",
@@ -19,7 +16,8 @@
     "pages/contact/contact",
     "pages/activity/activity",
     "pages/download/download",
-    "pages/howtoplay/howtoplay"
+    "pages/howtoplay/howtoplay",
+    "pages/register/agreement/agreement"
   ],
   "window": {
     "backgroundTextStyle": "light",

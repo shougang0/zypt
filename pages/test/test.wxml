@@ -1,2 +1,3 @@
 <!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
+<web-view src='https://www.zhongyouapp.com/article/detail/1_1' >注册协议
+    </web-view>
