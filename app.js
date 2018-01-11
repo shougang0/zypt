@@ -8,6 +8,7 @@ App({
       wx.checkSession({
         success:function(){
           that.globalData.uid = wx.getStorageSync('ptuserinfo').userid;
+          that.globalData.trd_session = wx.getStorageSync('ptuserinfo').trd_session;
         },
         fail:function(){
           wxlogin();
