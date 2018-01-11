@@ -27,7 +27,7 @@
   </view>
   <view class="text-center">
     <button type='warn' size="mini" bindtap='register'>同意以下协议并注册</button>
-    <view bindtap='agreement'>
+    <view bindtap='agreement' class='xieyi'>
       注册协议
     </view>
     <!-- <a href="${base}/article/detail/1_1" target="_blank">注册协议</a> -->
