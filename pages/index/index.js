@@ -24,7 +24,7 @@ Page({
     wx.request({
       url: app.globalData.apiBase +"/index.php/weixin/lunbo_and_icon.html",
       success:function(res){
-        console.log(res.data)
+        // console.log(res.data)
         that.setData({ imgGroup: res.data.imgGroup, 
           iconGroup: res.data.iconGroup ,
         })
@@ -75,7 +75,7 @@ Page({
                     }, 1000)
                 },
                 fail: function (e) {
-                  console.log(e)
+                  // console.log(e)
                 }
               })
             }
