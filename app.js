@@ -3,7 +3,7 @@ App({
   onLaunch: function (options) {
     var that = this;
     //开发阶段一直false 之后启用判断 wx.getStorageSync('flag') == 3 && wx.getStorageSync('ptuserinfo')
-    if (false ){
+    if (wx.getStorageSync('flag') == 3 && wx.getStorageSync('ptuserinfo') ){
       //判断session是否有效
       wx.checkSession({
         success:function(){
@@ -73,11 +73,26 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
+              this.globalData.userInfo = res.userInfo;
+              //合并加入trd
+              var combine = Object.assign(res.userInfo,{trd_session: that.globalData.trd_session});
+              //用户第一次授权，将info信息返回服务器
+              wx.request({
+                url: that.globalData.apiBase + "index.php/weixin/setInfo.html",
+                header: {
+                  'content-type': 'application/json'
+                },
+                type: 'GET',
+                data: combine,
+                success: function (res) {
+                      console.log(res);
+                }
+              })
+
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
+                console.log(this.userInfoReadyCallback(res));
               }
             }
           })

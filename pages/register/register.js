@@ -33,7 +33,7 @@ Page({
     }, 1000)
     let mobile = this.data.phone
    /**/ wx.request({
-      url: "http://www.zhongyouapp.com/api/registercode.json",
+     url: app.globalData.apiBase + "index.php/weixin/registerCode.html",
       method : "get",
       data: { mobile},
       success:function(res){
@@ -61,7 +61,7 @@ Page({
     if (g){  //查看是否已注册
       let that=this;
       wx.request({
-        url: 'http://www.zhongyouapp.com/api/register/v1/checkMobile.json',
+        url: app.globalData.apiBase + "index.php/weixin/checkMobile.html",
         data: { mobile: that.data.phone },
         method: 'GET',
         dataType: 'json',
@@ -91,8 +91,8 @@ Page({
     let password = this.data.password; //用户密码
     let code = this.data.code; //手机邀请码
     let gameKey = wx.getStorageSync('gameKey');//必赢2奖品参数
-    let session = wx.getStorageSync('trd_session') ;
-    if (!session) return
+    let trd_session = wx.getStorageSync('trd_session') ;
+    if (!trd_session) return
     if (mobile == undefined || mobile.length !=11 || mobile=="") {
       wx.showToast({
         title: "手机号长度不足",
@@ -117,18 +117,10 @@ Page({
       })
       return
     }
-    if (invcode == undefined  || invcode == "" ) {
-      wx.showToast({
-        title: "邀请码长度不对",
-        duration: 1000,
-        icon: 'loading',
-      })
-      return
-    }
     wx.request({
       url: app.globalData.apiBase + "index.php/weixin/zhuce.html",
-      data: { mobile, invcode, password, code, gameKey, session },
-      method: 'post',
+      data: { mobile, invcode, password, code, gameKey, trd_session },
+      method: 'get',
       dataType: 'json',
       success: function (res) {
         if (res.data.status == 200) {
@@ -150,7 +142,7 @@ Page({
           })
         } else {
           wx.showToast({
-            title: res.data.errmsg,
+            title: res.data.message,
             duration: 2000,
           })
         }

@@ -84,13 +84,5 @@ Page({
       }
     })
   },
- /* ceshi(){
-    wx.request({
-      url: "http://www.zyylpt.com/index.php/duanxinyz/register.html",
-      data: { mobile:15035262922 , code:3808},
-      success:function(res){
-        console.log(res.data.message)
-      }
-    })
-  }*/
+ 
 })
