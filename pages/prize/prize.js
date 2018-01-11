@@ -49,9 +49,16 @@ Page({
       confirmText: '确认',
       success: function(res) {
         if (res.confirm) {
-          wx.navigateTo({
-            url: "/pages/download/download",
-          }) 
+          // wx.navigateTo({
+          //   url: "/pages/download/download",
+          // }) 
+          wx.downloadFile({
+            url: 'https://example.com/audio/123', //仅为示例，并非真实的资源
+            //url: 'https://wwww.zhongyoupingtai.com/new/Android.apk',
+            success: function(res) {
+              console.log(res)
+            },
+          })
         }
       },
       

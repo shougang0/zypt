@@ -43,8 +43,16 @@ Page({
           trd_session: app.globalData.trd_session
         },
         success:function(res){
-          console.log(res.data)
-          if (res.data.errmsg) return that.setData({ isbegin: false }) 
+          if (res.data.errmsg) { 
+            clearInterval(begin);
+            that.setData({ isbegin: false });
+            wx.showToast({
+              title: "您未登录",
+              duration: 1000,
+              icon: 'loading',
+            })
+            return   
+           }
           clearInterval(begin); 
           var d = res.data.replace(/^\(|\)$/g, '');
           if(d==0){
@@ -65,6 +73,7 @@ Page({
           that.setData({isbegin: false }) 
         },
         fail: function (error) {
+          clearInterval(begin); 
           that.setData({ isbegin: false }) //遮罩层
           console.log(error)
         }
@@ -88,7 +97,11 @@ Page({
           trd_session: app.globalData.trd_session
         },
         success: function (res) {
-          if (res.data.errmsg) return that.setData({ isbegin: false }) 
+          if (res.data.errmsg) {
+            clearInterval(begin);
+            that.setData({ isbegin: false });
+            return
+          }
           clearInterval(begin);
           let d = res.data.replace(/^\(|\)$/g, '');
           if (d == 0) {
@@ -108,6 +121,7 @@ Page({
           })
         },
         fail: function (error) {
+          clearInterval(begin); 
           that.setData({ isbegin: false }) //遮罩层
           console.log(error)
         }

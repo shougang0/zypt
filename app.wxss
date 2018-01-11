@@ -50,3 +50,6 @@ image{
 .m_l_15{
   margin-left:30rpx
 }
+.text-center{
+  text-align: center;
+}

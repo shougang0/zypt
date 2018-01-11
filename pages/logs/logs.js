@@ -1,22 +1,13 @@
 //logs.js
-//const util = require('../../utils/util.js')
 var app = getApp()
 Page({
   data: {
     logs: []
   },
   onLoad: function () {
-    this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
-    if (wx.getStorageSync('flag')==3){
-      wx.switchTab({
-        url: '../index/index',
-      })
-    }
-    this.setData({
+    this.setData({ 
+      baseUrl: app.globalData.apiBase, //设置全局的页面路径
       userInfo: app.globalData.userInfo
-     /* logs: (wx.getStorageSync('logs') || []).map(log => {
-        return util.formatTime(new Date(log))
-      })*/
     })
   },
   formSubmit: function (e) {
@@ -27,8 +18,6 @@ Page({
     //console.log('form发生了submit事件，携带数据为：', c)
     let that=this;
     c.user = encodeURI(c.user);
-
-    console.log(that);
     wx.request({
       url: app.globalData.apiBase+'index.php/weixin/login.html',
       dataType: 'json',

@@ -1,3 +1,4 @@
+var app = getApp();
 Page({
     onTapJump2: function (event) {
       wx.redirectTo({ //新用户注册

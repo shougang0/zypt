@@ -42,11 +42,6 @@ App({
                 if (res.data.code == 3) {
                   wx.setStorageSync('ptuserinfo', res.data.ptuserinfo);
                   that.globalData.uid = res.data.ptuserinfo.userid;
-                 
-                  //console.log('有效1');
-                  // wx.switchTab({
-                  //   url: 'pages/index/index',
-                  // })
                 }
 
               }
