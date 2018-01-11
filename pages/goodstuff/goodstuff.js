@@ -74,8 +74,8 @@ function load(self){//加载数据
     title: '加载中',
   })
   wx.request({
-    url: app.globalData.apiBase +"index.php/app/myfood.html",
-    data: { uid: app.globalData.uid },
+    url: app.globalData.apiBase +"index.php/weixin/myfood.html",
+    data: { trd_session: app.globalData.trd_session },
     success: function (res) {
       wx.hideLoading()
       if (res.data) {

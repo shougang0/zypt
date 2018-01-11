@@ -12,9 +12,8 @@ Page({
   },
   formSubmit: function (e) {
     var a = e.detail.value;
-    var b = app.globalData.userInfo;
     //合并输入数据，用户信息（如果用户点击允许获取的话）和第三方session
-    var c = Object.assign(a, b, { trd_session: wx.getStorageSync('trd_session') });
+    var c = Object.assign(a, { trd_session: wx.getStorageSync('trd_session') });
     //console.log('form发生了submit事件，携带数据为：', c)
     let that=this;
     c.user = encodeURI(c.user);
@@ -23,7 +22,7 @@ Page({
       dataType: 'json',
       data: c,
       success: function (res) {
-        console.log(res) //登录结果
+        //console.log(res) //登录结果
         if (res.data == 2 || res.data == 1) {
           wx.showToast({
             title: '账号密码错误',
