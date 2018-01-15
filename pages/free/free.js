@@ -1,5 +1,6 @@
 var app = getApp();
 var util = require('../t.js');
+var db = true;
 Page({
   data: {
     list:[],
@@ -31,8 +32,15 @@ Page({
     var info = wx.getStorageSync('flag');
     if (info != 3) {
       util.islogin();//判断是否是登录状态
-    } else {
+    } else {  
+      
       var that = this
+      if(!db) return
+      db=false;
+      setTimeout(function () {
+        db = true;
+      }, 60 * 1000)
+      console.log(1)
       wx.request({
         url: app.globalData.apiBase + 'index.php/weixin/choujiang.html', //接口地址
         header: {
@@ -43,8 +51,10 @@ Page({
         },
         dataType: 'json',
         success: function (res) {
+          
           if (res.data) {
             let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
+            
             if (d['nk'] == 'nointval' || d['nk'] == 'funointval') {
               wx.showModal({
                 // title: '465456464',
@@ -75,6 +85,7 @@ Page({
                 })
               }, 5000)
             }
+            
           }
         }
       })

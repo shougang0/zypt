@@ -5,7 +5,7 @@ function islogin() {
     success: function (res) {
       if (res.confirm) {
         wx.reLaunch({
-          url: '/pages/welcome/welcome',
+          url: '/pages/login/login',
         })
       }
     },

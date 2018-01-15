@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/welcome/welcome",
     "pages/register/register",
     "pages/logs/logs",
@@ -17,6 +16,7 @@
     "pages/activity/activity",
     "pages/download/download",
     "pages/howtoplay/howtoplay",
+    "pages/login/login",
     "pages/register/agreement/agreement"
   ],
   "window": {

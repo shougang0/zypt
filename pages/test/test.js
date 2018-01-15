@@ -6,7 +6,6 @@ Page({
    */
   /**
    * "pages/logs/logs",//注册
-    "pages/index/index",//首页
     "pages/my/my",//我的
     "pages/game/game",//抽奖
     "pages/prize/prize",//奖品列表

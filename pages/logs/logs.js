@@ -42,7 +42,7 @@ Page({
 
           app.globalData.uid = res.data.userid
           wx.reLaunch({
-            url: '/pages/index/index',
+            url: '/pages/welcome/welcome',
           })
         }
       }

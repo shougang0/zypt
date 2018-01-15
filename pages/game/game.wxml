@@ -9,7 +9,7 @@
      <view wx:for="{{rulelist}}"  wx:for-index="idx" bindtap='listDetail' data-price='{{item.shop_price}}'  style='{{idx==40||idx==81||idx==122||idx==163?"width:100%":""}}'
      data-cot="{{item.good_name}}" data-url="{{item.img_url}}" >
         <image src='{{baseUrl}}{{item.img_url}}' mode='scaleToFill' wx:if="{{idx%2==0}}"
-         class='{{idx==showNnm?"opacity_0":""}}'></image>
+         class='{{idx==showNnm?"opacity_0":""}}' alt="图片途径错误"></image>
         <image src='{{baseUrl}}{{item.img_url}}' mode='scaleToFill' wx:else
          class='bg_f5  {{idx==showNnm?"opacity_0":""}}'></image>
      </view>
@@ -31,24 +31,31 @@
 <view class="modal" wx:if="{{ismodal}}">
   <view class='modal-dialog'>
     <view class='modal-title' wx:if="{{one_prize}}">
-      恭喜您获得
+      恭喜获得奖品
     </view>
+    
     <view wx:else class='center'>
       {{modaltitle}}
     </view>
     <view class='img_container'>
-       <image src='{{baseUrl}}{{imgUrl}}'></image>
+      <image src='{{baseUrl}}{{imgUrl}}' alt="图片途径错误"></image>
     </view>
-    <view class='center' wx:if="{{one_prize}}">
-      {{modaltitle}}
+    <view style='font-size:36rpx;'>
+      <view class='center' wx:if="{{one_prize}}">
+        {{modaltitle}}
+      </view>
+      <view  wx:if="{{!one_prize}}">
+        市场价{{price}}元
+      </view>
+      <view class='red'>
+        为您节省{{price}}元
+      </view>
     </view>
-    <view class='center'>
-      为您节省{{price}}元
-    </view>
+    
     <view  class='colse content_center m_10'>
         <view wx:if="{{one_prize}}"  class='btn'><navigator url='../prize/prize' open-type="redirect">查看奖品</navigator></view>
         <!-- <view wx:else class='btn'>查看奖品</view> -->
-        <view bindtap='modalhide' class='btn'>关闭</view>
+        <view bindtap='modalhide' class='btn'>关 闭</view>
     </view>
   </view>
 </view>
@@ -61,7 +68,7 @@
     </view>
     <view class='tenImg content_center m_10'>
       <view class='' wx:for="{{imgUrl}}">
-        <image src='{{baseUrl}}{{item.img_url}}'></image>
+        <image src='{{baseUrl}}{{item.img_url}}' alt="图片途径错误"></image>
       </view>
     </view>
     <view  class='colse content_center m_10'>

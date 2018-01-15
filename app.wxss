@@ -29,7 +29,7 @@ image{
   background:rgba(0, 0, 0, 0.7);
 }
 .modal-dialog {
-  width:86%;
+  width:76%;
   margin:20% auto 0;
   background:linear-gradient(#ffe744,#ffae00);
   box-sizing:border-box;
@@ -38,7 +38,9 @@ image{
 }
 .modal-title{
   text-align: center;
-  font-size: 48rpx
+  font-size: 36rpx;
+  margin-bottom: 10rpx;
+  font-weight: bold;
 } 
 .center{
   text-align: center;
@@ -53,3 +55,13 @@ image{
 .text-center{
   text-align: center;
 }
+.red{
+  color:red;
+}
+.f_c_c{
+  color: #ccc
+}
+button[size="mini"] {
+  padding:0 1em;
+}
+

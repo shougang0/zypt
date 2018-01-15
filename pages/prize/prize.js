@@ -45,7 +45,7 @@ Page({
   send(event){
     wx.showModal({
       title: '提示',
-      content: '功能正在开发中，请谅解。 点击识别二维码下载APP',
+      content: '请扫描二维码下载APP',
       confirmText: '确认',
       success: function(res) {
         if (res.confirm) {

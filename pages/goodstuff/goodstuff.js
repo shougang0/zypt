@@ -17,11 +17,16 @@ Page({
       util.islogin();
     }else{
       load(this);   
-    }
-     
+    }   
   },
   onPullDownRefresh: function () {//下拉刷新
-    load(this);
+    this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
+    var info = wx.getStorageSync('flag');
+    if (info != 3) {  //判断是否登录
+      util.islogin();
+    } else {
+      load(this);
+    }
   },
   change_: function (event) {//换米逻辑
     wx.showLoading({
@@ -77,7 +82,8 @@ function load(self){//加载数据
     url: app.globalData.apiBase +"index.php/weixin/myfood.html",
     data: { trd_session: app.globalData.trd_session },
     success: function (res) {
-      wx.hideLoading()
+      wx.hideLoading();
+      // console.log(app.globalData)
       if (res.data) {
         let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
         self.setData({ lists: d });

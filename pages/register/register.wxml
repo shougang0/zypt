@@ -16,12 +16,12 @@
     </view>
     <view class="section">
       <text class='red'>*</text> 请输入密码:
-      <input password="{{eye}}" type="text" maxlength='20' placeholder="请输入密码" 
-      placeholder-class='fsize' bindblur="chenkPassword"/>
+      <input password="{{eye}}"  maxlength='20' placeholder="请输入密码" style="margin-right:35px;"
+      placeholder-class='fsize' bindblur="chenkPassword" focus="{{eshow}}" />
        <view class='{{eye?"eye_close ":"eye_open"}} eye' bindtap='eye'></view> 
     </view>
     <view class="section">
-      <text> 邀请码</text><input  type="number" maxlength='12' placeholder="后期无法再添加邀请码"
+      <text>　邀请码</text><input  type="number" maxlength='12' placeholder="后期无法再添加邀请码"
        placeholder-class='fsize' bindblur="chenkInvCode" />
     </view>
   </view>

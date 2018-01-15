@@ -10,11 +10,10 @@
     <text>操作</text>
   </view>
   <view wx:for="{{lists}}" class='content_center content_list'>
-    <text>{{item.prizename}}</text>
-    <text>{{item.weight}}</text>
+    <text>{{item.prizename}}</text><text>{{item.weight}}</text>
     <text wx:if='{{item.prize_id!=2}}'>{{item.huilv}}</text>
-    <text wx:else>{{}}</text>
-    <text wx:if="{{item.send==1 && item.prize_id!=2}}" bindtap='change_' data-id="{{item.prize_id}}">换米</text>
-    <text wx:else> {{}}</text>
+    <text wx:else>{{ }}</text>
+    <text wx:if="{{item.send==1 && item.prize_id!=2}}" bindtap='change_' data-id="{{item.prize_id}}" class='chenk'>换米</text>
+    <text wx:else > {{}}</text>
   </view>
 </view>

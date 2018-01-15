@@ -2,7 +2,7 @@
 <view>
 
   <view class='btnGroup'>
-    <view bindtap=''>奖品列表</view>
+    <navigator url='' class='black'><view>奖品列表</view></navigator>
     <navigator url='../rich/rich' open-type="redirect" class='black'><view>神秘大奖</view></navigator>
     <navigator url='../game/game' open-type="redirect" class='black'><view>返回抽奖</view></navigator>
   </view>
@@ -11,6 +11,7 @@
     3.若使用第三方软件或利用系统bug进行不法行为及谋取不正当利益的用户，中油平台将对其账号进行永久封存！所有费用概不退还，一切后果自行承担。
     4.必赢活动最终解释权归中油平台所有。
     5.本活动赞助商非苹果公司,苹果公司与本活动无关。
+    6.由于北京快递管控，自2017年12月15日至2018年3月10日邮费整体调高，请北京的客户下单时注意。非常感谢！
   </text>
   <view>
     <view class='rule_list_title content_center'>
@@ -19,8 +20,9 @@
       <view class='m_l_15'>中奖时间</view>
       <view>寄送</view>
     </view>
+     <!-- <text  data-id="{{item.id}}" bindtap='send'>寄送</text> -->
     <view class='rule_list_content '>
-      <view wx:if="{{unde}}" class='center'>您的奖品列表为空！！</view>
+      <view wx:if="{{unde}}" class='center f_c_c' >您的奖品列表为空！！</view>
       <view  wx:for="{{rule_list_content}}" class=''><!--//>奖品列表-->
         <text style="width:16%">{{index+1}}</text>
         <text class="prizename" bindtap='showdetail' 
@@ -46,13 +48,12 @@
     <view class='modal-title' >
        {{modaltitle}}
     </view>
-    <text >{{modalcontent}}
-    </text>
-    <view>
+    <view class='contentdateil'>{{modalcontent}}</view>
+    <view class='textsize'>
       为您节省{{prize}}元
     </view>
     <view  class='colse content_center m_10'>
-      <button type='warn' size='mini'>点击查看</button>
+      <!-- <button type='warn' size='mini'>点击查看</button> -->
       <button type='warn' size='mini' bindtap='modalhide'>关闭</button> 
     </view>  
   </view>

@@ -5,16 +5,18 @@
   </view>
   <view class='cont'>
     <view>
-      <text>招商合作电话：18920108005</text>
+      <text>招商合作 : 电话：18920108005</text>
+      
+    </view>
+    <view style="margin-left:190rpx"><text> 微信：18920108005</text></view>
+    <view >
+      <text>客服服务 : 电话：022-24462177</text>
     </view>
       <view>
-      <text>客服服务电话：022-24462177</text>
+      <text>客服微信 : zhongyoupingtai0905</text>
     </view>
       <view>
-      <text>客服微信:zhongyoupingtai0905</text>
-    </view>
-      <view>
-      <text>诚聘英才电话：022-24460276</text>
+      <text>诚聘英才 : 电话：022-24460276</text>
     </view>
   </view>
   

@@ -1,4 +1,4 @@
 /* pages/activity/activity.wxss */
-.container{
+page{
       background-color: #F72526;
 }

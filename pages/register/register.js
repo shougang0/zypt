@@ -8,19 +8,20 @@ Page({
   data: {
     eye:true,
     times:60,
+    eshow:'',
     disabled:true
   },
   onLoad(){
     this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
   },
   //切换明码密码
-  eye(){
-    this.setData({ eye: this.data.eye ? false: true})
+  eye(e){
+    this.setData({ eye: this.data.eye ? false : true, eshow: true})
   },
   //发送手机验证码
   sendCode(){
     this.setData({ disabled: true })  //禁用
-    var time = 10;  //限制时间
+    var time = 60;  //限制时间
     var t = () => {
       this.setData({ disabled: false})  //移除禁用
       this.setData({ times: 60 })  
@@ -136,7 +137,7 @@ Page({
             success() {
               setTimeout(function () {
                 wx.redirectTo({
-                  url: '/pages/index/index',
+                  url: '/pages/welcome/welcome',
                 })
               }, 2000)
             }
@@ -144,7 +145,8 @@ Page({
         } else {
           wx.showToast({
             title: res.data.message,
-            duration: 2000,
+            duration: 1000,
+            icon: 'loading',
           })
         }
       },

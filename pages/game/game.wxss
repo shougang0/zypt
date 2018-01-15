@@ -41,11 +41,13 @@
 }
 .modal-title {
   font-size:36rpx;
+  font-weight: 200;
 }
 .img_container{
-  height:100px;
-  width: 100px;
+  height:150px;
+  width: 150px;
   margin: 0 auto;
+  font-size: 36rpx;
 }
 .tenImg > view{
   width:19%;
@@ -61,11 +63,15 @@
   border:1px solid #fff;
   width:170rpx;
   text-align:center;
-  padding:3px;
+  padding:6px;
+  font-size:24rpx;
 }
 .modal_opacity{
   background:rgba(0, 0, 0, 0.3);
 }
 .opacity_0{
   opacity: 0
+}
+.modal-dialog{
+  border: 1px solid #fff;
 }
