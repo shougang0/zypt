@@ -8,12 +8,17 @@ Page({
     pan_rot:0,
     isrule:false,
   },
-
+  onShareAppMessage: function () {
+    return {
+      title: '中油平台白拿',
+      path: '/pages/welcome/welcome'
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
+    this.setData({ baseUrl: 'http://www.zyylpt.com/' })//设置全局的页面路径
     var that=this
     wx.request({
       url: app.globalData.apiBase+'index.php/free/jiangpin.html', 

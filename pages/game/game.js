@@ -16,7 +16,7 @@ Page({
     showNnm:null,
   },
   onLoad () {
-    this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
+    this.setData({ baseUrl: 'http://www.zyylpt.com/' })//设置全局的页面路径
     let that=this
     wx.request({
       url: app.globalData.apiBase+"index.php/app/jiangpin.html", 
@@ -25,6 +25,9 @@ Page({
         that.setData({rulelist:d.src})
       }
     })
+  },
+  onShareAppMessage: function () {
+    return {}
   },
   one_prize(){ 
     //if (!app.globalData.trd_session) return //一次抽奖

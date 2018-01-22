@@ -8,7 +8,37 @@ Page({
     iconGroup: "",
     islogin: false
   },
+  
+  onShareAppMessage: function () {
+    return {
+      path: '/pages/welcome/welcome',
+      title:"中油平台",
+      success:function(result){//转发信息
+        if (result.shareTickets) {//群发          
+          wx.getShareInfo({// 获取转发详细信息
+            shareTicket: result.shareTickets[0],
+            success(res) {
+              console.log(" 获取转发详细信息1313")
+              console.log(res.roomTopic); // 错误信息
+              console.log(res.encryptedData); // 解密后为一个 JSON 结构（openGId  群对当前小程序的唯一 ID）
+              console.log(res.iv); // 加密算法的初始向量
+            },
+          });
+        }else{//个人
+
+        }
+      },
+      fail:function(res){
+        console.log("失败")
+      },
+       complete() { }
+    }
+  },
+  
   onLoad: function () {
+     wx.showShareMenu({
+       withShareTicket: true,
+     })
     let that = this;
     var info = wx.getStorageSync('ptuserinfo');
     var img = info.avatarUrl ? info.avatarUrl : "/img/user.png"
@@ -18,7 +48,7 @@ Page({
       data: { uid: info.userid },
       success: function (res) {
         let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
-        that.setData({ rice: d })
+        that.setData({ rice: d })//剩余大米
       }
     })
     wx.request({
@@ -33,6 +63,7 @@ Page({
     })
   },
   onShow: function () { //页面切换显示大米
+    
     let that = this;
     var info = wx.getStorageSync('ptuserinfo');
     if (info != "") {
@@ -85,5 +116,5 @@ Page({
       }
     })
   },
-
+  
 })

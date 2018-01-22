@@ -12,7 +12,18 @@ Page({
     pageNum:'',
     totalNam:''
   },
-
+  onShareAppMessage: function () {
+    return {
+      title:'我的奖品',
+      path: '/pages/game/game',
+      success: function (res) {
+        console.log(1)
+      },
+      fail: function (res) {
+        console.log("失败")
+      }
+    }
+  },
   onLoad () {
     var info = wx.getStorageSync('flag');
     if (info != 3) {

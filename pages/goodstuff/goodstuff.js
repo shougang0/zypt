@@ -28,6 +28,17 @@ Page({
       load(this);
     }
   },
+  onShareAppMessage: function () {
+    return {
+      title:"我的余粮",
+      success: function (res) {
+        console.log(res)
+      },
+      fail: function (res) {
+        console.log("失败")
+      }
+    }
+  },
   change_: function (event) {//换米逻辑
     wx.showLoading({
       title: '加载中',
@@ -53,6 +64,11 @@ Page({
       
     })
   }, 
+  increase(){
+    wx.navigateTo({
+      url: '/pages/goodstuff/increase',
+    })
+  }
 })
 
 function confirmEnter(id,self) {//确认换米

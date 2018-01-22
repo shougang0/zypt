@@ -17,7 +17,8 @@
     "pages/download/download",
     "pages/howtoplay/howtoplay",
     "pages/login/login",
-    "pages/register/agreement/agreement"
+    "pages/register/agreement/agreement",
+    "pages/goodstuff/increase"
   ],
   "window": {
     "backgroundTextStyle": "light",

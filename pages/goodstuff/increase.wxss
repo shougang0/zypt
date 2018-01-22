@@ -1,0 +1,23 @@
+/* pages/goodstuff/increase.wxss */
+.container{
+  padding: 10px;
+}
+view{
+  font-size: 14px;
+}
+.thead{
+  background-color: red;
+  font-size: 16px;
+  color: #fff;
+  padding: 3px 0;
+}
+.num,.time{
+  display: inline-block;
+   text-align: center  
+}
+.num{
+  width: 35%
+}
+.time{
+  width:64%;   
+}
