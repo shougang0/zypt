@@ -7,9 +7,7 @@ page{
    background-size: 100% 120%;
   
 }
-.free {
-   
-}
+
 .toptitle{
   height: 75rpx;
   width: 68%;
@@ -29,7 +27,7 @@ page{
   display: flex;
   justify-content: space-around;
   margin-top: 40rpx;
-  margin: 20px 10% 0;
+  margin: 20px 5% 0;
 }
 .btnGroup button{
   border: 1px solid #fff;
@@ -116,4 +114,9 @@ page{
     background: linear-gradient(#ffe744,#ffae00);
     border: 1px solid #fff;
     color: #000;   
+}
+
+button[size="mini"] {
+  padding:0 .8em;
+
 }

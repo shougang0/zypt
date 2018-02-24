@@ -6,12 +6,7 @@
     <navigator url='../rich/rich' open-type="redirect" class='black'><view>神秘大奖</view></navigator>
     <navigator url='../game/game' open-type="redirect" class='black'><view>返回抽奖</view></navigator>
   </view>
-  <text class='rule_text'>1.必赢奖品订单请在三十分钟内支付邮费，否则商品将过期不可邮寄。 
-    2.每种奖品需单独寄送.必赢板块是石油人的专属福利发放板块，所有奖品一经点击邮寄皆不可退换更改。 
-    3.若使用第三方软件或利用系统bug进行不法行为及谋取不正当利益的用户，中油平台将对其账号进行永久封存！所有费用概不退还，一切后果自行承担。
-    4.必赢活动最终解释权归中油平台所有。
-    5.本活动赞助商非苹果公司,苹果公司与本活动无关。
-    6.由于北京快递管控，自2017年12月15日至2018年3月10日邮费整体调高，请北京的客户下单时注意。非常感谢！
+  <text class='rule_text'>{{prizeText}}
   </text>
   <view>
     <view class='rule_list_title content_center'>

@@ -27,7 +27,7 @@
   margin-bottom:20rpx;
 }
 .content_list text{
-  width: 16%;
+  width: 17%;
   text-align: center;
 }
 .back{

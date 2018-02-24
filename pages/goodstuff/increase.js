@@ -6,7 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
   },
 
   /**
@@ -27,7 +26,10 @@ Page({
       success: function (res) {
         wx.hideLoading();
         let d = JSON.parse(res.data.replace(/^\(|\)$/g, ''));
-        if (!d.message) return;
+        if (!d.result){
+          that.setData({ list:"" })
+          return;
+        } 
         that.setData({list:d.result})
       },
       

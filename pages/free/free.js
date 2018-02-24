@@ -11,7 +11,6 @@ Page({
   onShareAppMessage: function () {
     return {
       title: '中油平台白拿',
-      path: '/pages/welcome/welcome'
     }
   },
   /**
@@ -40,7 +39,13 @@ Page({
     } else {  
       
       var that = this
-      if(!db) return
+      if(!db){
+        wx.showModal({
+          showCancel: false,
+          content: "未到抽奖时间",
+        })
+        return
+      } 
       db=false;
       setTimeout(function () {
         db = true;

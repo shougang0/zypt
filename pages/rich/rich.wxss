@@ -1,14 +1,20 @@
 /* pages/rich/rich.wxss */
-.container{
-     background-image: linear-gradient(#Fe4847, #Ff1855);
+page{
+  background:url("http://www.zyylpt.com/Public/images/home/play/new_bg2.jpg");
+  background-repeat-x: no-repeat;
+  background-size: contain;
+}
+.content{
+  overflow:hidden; 
 }
 .btnGroup{
   display: flex;
   justify-content: space-around;
-  width: 98%;
+  width: 90%;
   align-items:center;
-  font-size: 32rpx;
-  padding:10px 0; 
+  font-size: 24rpx;
+  padding:10px 0;
+  margin: 0 auto; 
 }
 .btnGroup  view{
   background: linear-gradient(#fc2727, #e20000);
@@ -26,13 +32,14 @@
 }
 /* -----------ihone-------- */
 .img_detail{
-  width: 94%;
+  width: 84%;
   margin: 0 auto 10px;
   background: #f5f5f5;
-  height: 110px;
   box-shadow: 0 4px 8px rgba(179,12,0 ,.5);
-  color: #656565;
-  text-align: center;
+  color: #666;
+  font-size: 24rpx;
+  padding:2px 10px 10px 10px ;
+  box-sizing: content-box;
 }
 .img_s{
   width: 45%;
@@ -59,26 +66,26 @@
   padding:0 3% 20px;
   position: relative;
   background: #f5f5f5;
-  width: 88%;
+  width: 84%;
   margin:0 auto; 
   box-shadow: 0 4px 8px rgba(179,12,0 ,.5);
 }
 .imgItem> view{
-  height: 180rpx;
+  height: 220rpx;
 }
 .imgItem {
   width: 19%;
-  height: 220rpx;
+  height: 240rpx;
   display: inline-block;
-  margin: 20px 3% 10px;
+  margin: 20rpx 3% 10px;
 }
 .top_prize{
     background: linear-gradient(#fc2727, #e20000);
-    font-size: 50rpx;
+    font-size: 40rpx;
     color: #fdea6d;
-    width: 60%;
+    width: 74%;
     box-shadow: 0 2px 2px #B1143B;
-    margin: 50rpx auto 0;
+    margin: 50rpx auto 20px;
     border-radius: 20px;
     text-align: center;
     height: 90rpx;
@@ -98,5 +105,13 @@
   text-align: center;
   width: 25%;
   /* height:70rpx;  */
-  padding-top:230rpx; 
+  padding-top:240rpx; 
 }
+
+.notice{
+  font-size: 20rpx;
+  color: white;
+  padding: 10px;
+}
+
+

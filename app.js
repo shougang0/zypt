@@ -44,7 +44,6 @@ App({
                   wx.setStorageSync('ptuserinfo', res.data.ptuserinfo);
                   that.globalData.uid = res.data.ptuserinfo.userid;
                 }
-
               }
             })
           } else {

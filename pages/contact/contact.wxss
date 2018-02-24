@@ -1,18 +1,1 @@
 /* pages/contact/contact.wxss */
-.content{
-  background: url('https://www.zhongyoupingtai.com/resources/mobile/shop/images/new-img/us.jpg');
-  background-size: 100% 100%;
-  color:#fff;
-  height: 100%;
-}
-.h1_title{
-  font-size: 78rpx;
-  text-align:center;
-  padding-top:110px;
-  padding-bottom: 40px;
-}
-.cont view{
-  padding:0 15px ;
-  margin: 30px 0;
-  font-size: 40rpx;
-}

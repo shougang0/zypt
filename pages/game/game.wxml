@@ -1,7 +1,7 @@
 <view>
 
   <view class='TopBanner'>
-    <image src='https://www.zhongyoupingtai.com/resources/mobile/game/img/new_byimg/title.png' ></image>
+    <image src='http://zhongyouapp.com/resources/mobile/game/img/new_byimg/title.jpg' ></image>
   </view>
 
   <!-- 图片列表 -->

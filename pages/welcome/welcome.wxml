@@ -31,8 +31,7 @@
     </swiper>
   </view>
 
-  
-  
+   
 </view>
 <view class="usermotto content_center ">
     <block wx:for="{{iconGroup}}">

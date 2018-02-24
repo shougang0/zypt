@@ -1,4 +1,4 @@
 <!--pages/activity/activity.wxml-->
-
-   <image src="{{baseUrl}}new/img/activity.jpg"></image>
+<web-view src="https://www.zhongyoupingtai.com/new/page/index.html" > 
+</web-view>
 

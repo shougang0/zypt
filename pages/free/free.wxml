@@ -1,6 +1,6 @@
 <!--pages/free/free.wxml-->
 <view class='free'>
-  <image src='{{baseUrl}}resources/mobile/game/img/new_byimg/prize.png' class='toptitle'></image>
+  <image src='http://zhongyouapp.com/resources/mobile/game/img/new_byimg/prize.png' class='toptitle'></image>
   <view id='wrap' class='turnplate'>
     <view style='transform: rotate({{pan_rot}}deg)!important;' class='goods'>
       <view class='showItem' wx:for="{{list}}" style='transform:rotate(-{{index*18}}deg)' >
@@ -11,7 +11,7 @@
       </view>
     </view>
 
-    <image src='{{baseUrl}}resources/mobile/game/img/new_byimg/pointer.png' bindtap='getProdut' class="pointer"></image>
+    <image src='http://zhongyouapp.com/resources/mobile/game/img/new_byimg/pointer.png' bindtap='getProdut' class="pointer"></image>
     <view class='line' style='transform: rotate({{pan_rot}}deg)!important;'>
       <view style='transform:rotate(9deg)'></view>
       <view style='transform:rotate(27deg);'></view>
@@ -27,6 +27,9 @@
   </view>
 
   <view class='btnGroup'>
+    <navigator url='/pages/welcome/welcome'  open-type='redirect'>
+      <button type='warn' size='mini'>首页</button>
+    </navigator>
     <navigator url='../goodstuff/goodstuff' >
       <button type='warn' size='mini'>我的余粮</button>
     </navigator>

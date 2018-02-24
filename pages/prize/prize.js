@@ -25,6 +25,16 @@ Page({
     }
   },
   onLoad () {
+    var that=this;
+    wx.request({//服务器上面自动修改文字
+      url: app.globalData.apiBase + "/index.php/weixin/prizeText.html",
+      method: 'GET',
+      dataType: 'json',
+      success: function(res) {
+        that.setData({ prizeText:res.data})
+      },
+      
+    })
     var info = wx.getStorageSync('flag');
     if (info != 3) {
       util.islogin();//判断是否是登录状态

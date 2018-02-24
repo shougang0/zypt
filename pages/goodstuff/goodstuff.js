@@ -28,7 +28,7 @@ Page({
       load(this);
     }
   },
-  onShareAppMessage: function () {
+  onShareAppMessage: function () {//分享
     return {
       title:"我的余粮",
       success: function (res) {
@@ -64,7 +64,7 @@ Page({
       
     })
   }, 
-  increase(){
+  increase() {//加米详细
     wx.navigateTo({
       url: '/pages/goodstuff/increase',
     })

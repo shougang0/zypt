@@ -1,16 +1,16 @@
 {
   "pages": [
+    "pages/free/free",
     "pages/welcome/welcome",
     "pages/register/register",
     "pages/logs/logs",
     "pages/my/my",
     "pages/game/game",
     "pages/prize/prize",
-    "pages/free/free",
+    "pages/rich/rich",
     "pages/goodstuff/goodstuff",
     "pages/shop/shop",
     "pages/order/order",
-    "pages/rich/rich",
     "pages/address/address",
     "pages/contact/contact",
     "pages/activity/activity",
@@ -18,7 +18,8 @@
     "pages/howtoplay/howtoplay",
     "pages/login/login",
     "pages/register/agreement/agreement",
-    "pages/goodstuff/increase"
+    "pages/goodstuff/increase",
+    "pages/activity/free/free"
   ],
   "window": {
     "backgroundTextStyle": "light",

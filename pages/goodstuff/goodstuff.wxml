@@ -1,6 +1,6 @@
 <!--pages/goodstuff/goodstuff.wxml-->
 <view class='TopBanner'>
-  <image src='{{baseUrl}}resources/mobile/game/img/new_byimg/jinchengtuo.png' ></image>
+  <image src='http://zhongyouapp.com/resources/mobile/game/img/new_byimg/jinchengtuo.png' ></image>
 </view>
 <view class='content'>
   <view class='content_text'>
@@ -14,7 +14,7 @@
     <text wx:if='{{item.prize_id!=2}}'>{{item.huilv}}</text>
     <text wx:else>{{ }}</text>
     <text wx:if="{{item.send==1 && item.prize_id!=2}}" bindtap='change_' data-id="{{item.prize_id}}" class='chenk'>换米</text>
-    <text wx:elif="{{item.prize_id==2}}" bindtap='increase' class='chenk '> 加米详细</text>
+    <text wx:elif="{{item.prizename=='大米'}}" bindtap='increase' class='chenk '> 加米详细</text>
     <text wx:else > {{}}</text>
   </view>
 </view>
