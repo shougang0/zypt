@@ -6,7 +6,6 @@ Page({
     list:[],
     prize:'',
     pan_rot:0,
-    isrule:false,
   },
   onShareAppMessage: function () {
     return {
@@ -30,6 +29,15 @@ Page({
        // console.log(JSON.parse(lists))    
       }
     })
+    wx.getSystemInfo({
+      success: function (res) {
+        var ua = res.model;
+        if (/iphone|ipad|ipod/i.test(ua)) {
+         // console.log(ua)
+          that.setData({ isIphone:true })
+        }
+      }
+    })
   },
   
   getProdut() {//开始抽奖
@@ -50,7 +58,6 @@ Page({
       setTimeout(function () {
         db = true;
       }, 60 * 1000)
-      console.log(1)
       wx.request({
         url: app.globalData.apiBase + 'index.php/weixin/choujiang.html', //接口地址
         header: {
@@ -103,10 +110,10 @@ Page({
     
   },
 
-  rulecolse(){
-    this.setData({isrule:false})
-  },
-  ruleShow(){
-    this.setData({ isrule: true })
-  }
+  // rulecolse(){
+  //   this.setData({isrule:false})
+  // },
+  // ruleShow(){
+  //   this.setData({ isrule: true })
+  // }
 })

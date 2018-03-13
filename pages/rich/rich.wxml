@@ -4,7 +4,7 @@
     <navigator url='../prize/prize' open-type="redirect" class='black'>
       <view>奖品列表</view>
     </navigator>
-    <view>神秘年货</view>
+    <view>花漾大礼</view>
     <navigator url='../game/game' open-type="redirect" class='black'>
       <view>返回抽奖</view>
     </navigator>
@@ -13,28 +13,20 @@
 
   <view class="img_detail">
       <view class='center'>【温馨提示】</view> 
-      <text>1、兑换后的神秘年货将在“我的必赢”下拉列表显示，请在三十分钟内支付邮费，否则商品将过期不可邮寄；
-        2、每集齐“春节福瑞、新年旺运”8个祝福字，可兑换一次神秘年货；
-        3、确认兑换后，将消除一套祝福字，无论是否领取神秘年货，消除后的祝福字不返还。
+      <text>1、花漾大礼将在“我的必赢”下拉列表显示，请在三十分钟内支付邮费，否则商品将过期不可邮寄；
+        2、每集齐女人心8块拼图，可兑换一次花漾大礼；
+        3、确认兑换后，将消除一套拼图，无论是否领取花漾大礼，消除后的祝福字不返还。
       </text>
-      <!-- <view class='img_s'><image src="{{baseUrl}}resources/mobile/game/img/new_pic/iphone.png" alt=""></image></view>
-      <view class="text_s">
-        <view>本期神秘大奖是<text class="c_red">iphoneX</text>一部</view>
-        <view>+</view>
-        <view><text class="c_red">神秘礼包</text>一个！</view>
-      </view> -->
   </view>
 
-  <view class='imglist'>
-    <view wx:for="{{imgList}}" class='imgItem'>
-      <view>
-      <!--以后记得换路径/Public/images/home/play/cai2.jpg  -->
-        <image src='http://www.zyylpt.com/resources/mobile/game/img/{{item}}'></image>
-      </view>
-    </view>
-    <view class='listnum' >
-      <view wx:for="{{listnum}}">{{item}}个</view>
-    </view>
+   <view class='imglist'> 
+    <view>   
+      <view wx:for="{{listnum}}" wx:for-item="num" wx:for-index="idx"  
+      class='imgItem {{num==0?"filter":""}}'>
+        <image src='http://www.zyylpt.com/resources/mobile/game/img/new_pic/H{{idx}}.jpg'></image>
+        <text class='numbox'>{{num}}个</text>
+      </view> 
+    </view>  
   </view>
 
   <view class='top_prize' bindtap='exchange'>

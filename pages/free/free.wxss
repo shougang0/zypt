@@ -3,8 +3,8 @@ view,text{
   padding:0;
 }
 page{
-  background: url("https://www.zhongyoupingtai.com/resources/mobile/game/img/new_byimg/bg.png")  no-repeat ;
-   background-size: 100% 120%;
+  background: url(http://zhongyouapp.com/resources/mobile/game/img/new_byimg/bg.jpg)  no-repeat ;
+   background-size: 100% 120%;  
   
 }
 
@@ -20,7 +20,7 @@ page{
   margin: 0 auto;
   width: 700rpx;
   height:700rpx;
-  background: url("https://www.zhongyoupingtai.com/resources/mobile/game/img/new_byimg/round.gif");
+  background: url("http://zhongyouapp.com/resources/mobile/game/img/new_byimg/round.png");
   background-size: 100% ;
 }
 .free .btnGroup{
@@ -30,19 +30,28 @@ page{
   margin: 20px 5% 0;
 }
 .btnGroup button{
-  border: 1px solid #fff;
-  background-color: #F92323;
   font-weight: bold;
+  background: linear-gradient(#fbc6cb, #fe5c95);
+  border-radius: 40rpx;
 }
 .textTitle{
-  width:92%;
-  margin:0 auto 40px;
+  width:82%;
+  margin:20px auto;
+  background: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(179,12,0 ,.5);
+    color: #000;
+    opacity: .7;
+    font-size: 24rpx;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    line-height: 20rpx;
+    box-sizing:border-box;
 }
 .textTitle>text,.textTitle>view{
-  color:#ffb700;
+  color:#000;
   font-size:24rpx;
   line-height: 48rpx;
-  text-align: center
 }
 .pointer{
   position: absolute;
@@ -62,8 +71,12 @@ page{
   height: 100%;
   font-size: 16rpx;
   color:red;
-  padding-top:10rpx;
+  padding-top:20rpx; 
+  box-sizing:border-box;
 
+}
+.showItem>view{
+  height: 100%;
 }
 .showItem image{
   width:38rpx;
@@ -73,11 +86,14 @@ page{
 }
 .goods{
   position: absolute;
-  margin-top: 12%;
-  margin-left:12%;
-  width: 76%;
-  height: 76%;
+  margin-top: 10%;
+  margin-left:10%;
+  width: 80%;
+  height: 80%;
   transition:all 5s;
+  background: url(http://www.zyylpt.com/resources/mobile/game/img/new_pic/free_c_bj.png) no-repeat;
+  background-size: 100% 100%; 
+  overflow: hidden;
 }
 
 .modal-dialog .colse{
@@ -116,7 +132,6 @@ page{
     color: #000;   
 }
 
-button[size="mini"] {
-  padding:0 .8em;
-
+.white{
+  color:white;
 }

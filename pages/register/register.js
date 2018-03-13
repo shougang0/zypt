@@ -56,7 +56,7 @@ Page({
   chenkPhone(e){  //
    // console.log(e.detail)
     this.setData({ phone: e.detail.value }) ;
-    var reg = /^1[3|4|5|7|8]\d{9}$/;
+    var reg = /^1[3|4|5|7|8|9]\d{9}$/;
     var g = (e.detail.value).match(reg);
 
     if (g){  //查看是否已注册

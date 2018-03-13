@@ -1,13 +1,14 @@
 {
   "pages": [
+    
     "pages/free/free",
     "pages/welcome/welcome",
     "pages/register/register",
     "pages/logs/logs",
     "pages/my/my",
+    "pages/rich/rich",
     "pages/game/game",
     "pages/prize/prize",
-    "pages/rich/rich",
     "pages/goodstuff/goodstuff",
     "pages/shop/shop",
     "pages/order/order",

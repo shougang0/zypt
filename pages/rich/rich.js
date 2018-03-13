@@ -7,17 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listnum:[],
-    imgList: ['new_pic/H1.png', 'new_pic/H2.png', 'new_pic/H3.png','new_pic/H4.png',
-      'new_pic/H5.png', 'new_pic/H6.png', 'new_pic/H7.png','new_pic/H8.png',
-     ]    
+    listnum:[],   
   },
   onLoad: function (options) {
     this.setData({ baseUrl: app.globalData.apiBase })//设置全局的页面路径
-    var that = this
+    var that = this;
+    var uid = wx.getStorageSync('ptuserinfo').userid;
     wx.request({
       url: app.globalData.apiBase +"index.php/app/suprize.html",
-      data: { uid: app.globalData.uid},
+      data: { uid: uid},
       success: function (res){
         let lists = res.data.replace(/^\(|\)$/g, '');
         that.setData({ listnum: JSON.parse(lists) })
@@ -42,21 +40,6 @@ Page({
           }
         }
       })
-      // wx.request({
-      //   url: app.globalData.apiBase + "/index.php/app/openprize.html",
-      //   data: { uid: app.globalData.uid },
-      //   success: function (res) {
-      //     let lists = res.data.replace(/^\(|\)$/g, '');
-      //     let d = JSON.parse(lists)
-      //     if (d.code == 400) {
-      //       wx.showModal({
-      //         content: "未集齐八个字的祝福字，快去必赢吧。",
-      //       })
-      //     }else{//集齐换奖
-            
-      //     }
-      //   }
-      // })
     }  
   }
 })

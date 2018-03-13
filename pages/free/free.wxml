@@ -1,29 +1,19 @@
 <!--pages/free/free.wxml-->
 <view class='free'>
-  <image src='http://zhongyouapp.com/resources/mobile/game/img/new_byimg/prize.png' class='toptitle'></image>
+  <image src='http://zhongyouapp.com/resources/mobile/game/img/new_byimg/prize1.png' class='toptitle'></image>
   <view id='wrap' class='turnplate'>
     <view style='transform: rotate({{pan_rot}}deg)!important;' class='goods'>
-      <view class='showItem' wx:for="{{list}}" style='transform:rotate(-{{index*18}}deg)' >
+      
+      <view class='showItem  {{i%2==0?"white":""}}' wx:for="{{list}}" style='transform:rotate(-{{i*18}}deg)' wx:for-index="i">
           {{item.prize_name+item.prize_attr}}
           <view>
             <image src='{{baseUrl}}{{item.imgurl}}'> </image>
-          </view>
+          </view> 
       </view>
+
     </view>
 
-    <image src='http://zhongyouapp.com/resources/mobile/game/img/new_byimg/pointer.png' bindtap='getProdut' class="pointer"></image>
-    <view class='line' style='transform: rotate({{pan_rot}}deg)!important;'>
-      <view style='transform:rotate(9deg)'></view>
-      <view style='transform:rotate(27deg);'></view>
-      <view style='transform:rotate(45deg);'></view>
-      <view style='transform:rotate(63deg);'></view>
-      <view style='transform:rotate(81deg);'></view>
-      <view style='transform:rotate(99deg);'></view>
-      <view style='transform:rotate(117deg);'></view>
-      <view style='transform:rotate(135deg);'></view>
-      <view style='transform:rotate(153deg);'></view>
-      <view style='transform:rotate(171deg);'></view>
-    </view>
+     <image src='http://zhongyouapp.com/resources/mobile/game/img/new_byimg/go.png' bindtap='getProdut' class="pointer"></image> 
   </view>
 
   <view class='btnGroup'>
@@ -36,27 +26,22 @@
     <navigator url='../game/game' open-type='redirect'>
       <button type='warn' size='mini'>去玩必赢</button>
     </navigator>
-    <navigator>
+   <!-- <navigator>
       <button type='warn' size='mini' bindtap='ruleShow'>活动规则</button>
-    </navigator>
+    </navigator>  -->
 
   </view>
   <view class='textTitle'>
-    <view>
-    <text>
-      所有白拿中奖结果皆以官方技术后台记录作为唯一中奖结果评判标准。(每次白拿之间有60分钟间隔)
-    </text>  
-    </view>
-    <view>
-      白拿活动最终解释权归中油平台所有。
-    </view>
-    <view>
-      本活动赞助商非苹果公司,苹果公司与本活动无关。
-    </view>
+    <text>活动规则
+      1、每次白拿之间有60分钟间隔。
+      2、点击白拿按钮开始抽奖，中奖后可进入“我的余粮”查看，所得奖品可在必赢板块抽取更多大奖。
+      3、白拿活动最终解释权归中油平台所有。<text wx:if='{{isIphone}}'>
+        4、本活动赞助商非苹果公司,苹果公司与本活动无关。
+      </text>
+    </text>
   </view>
-
 </view>
-<view class="modal" wx:if="{{isrule}}">
+<!-- <view class="modal" wx:if="{{isrule}}">
   <view class='modal-dialog'>
     <view class='modal-title'>
       活动规则
@@ -79,4 +64,4 @@
       <button type='warn' size='mini' bindtap='rulecolse'>关闭窗口</button>
     </view>
   </view>
-</view>
+</view> -->
