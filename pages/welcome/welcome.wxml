@@ -33,7 +33,7 @@
 
    
 </view>
-<view class="usermotto content_center ">
+<view class="usermotto content_center icon-box">
     <block wx:for="{{iconGroup}}">
       <!-- 图标信息 -->
       <view class='icon_item item' >

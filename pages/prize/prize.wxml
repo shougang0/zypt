@@ -3,7 +3,7 @@
 
   <view class='btnGroup'>
     <navigator url='' class='black'><view>奖品列表</view></navigator>
-    <navigator url='../rich/rich' open-type="redirect" class='black'><view>神秘大奖</view></navigator>
+    <navigator url='../rich/rich' open-type="redirect" class='black'><view>花漾大礼</view></navigator>
     <navigator url='../game/game' open-type="redirect" class='black'><view>返回抽奖</view></navigator>
   </view>
   <text class='rule_text'>{{prizeText}}

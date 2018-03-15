@@ -18,8 +18,8 @@
   display: block;
   width: 18%;
   text-align:center;
-  box-shadow: 0 5px 10px rgba(255, 50 ,10, .8);
-  background:linear-gradient( #ff2a03,#ff4a17 );
+  box-shadow: 0 5px 10px rgba(84, 209 ,170, .8);
+  background:linear-gradient(#54d1b3,#10a6af);
   border-radius: 24px;
   color: #fff;
   height:52rpx;
@@ -40,6 +40,7 @@
   height: 148rpx;
 }
 .modal-title {
+  margin-top: 20rpx;
   font-size:36rpx;
   font-weight: 200;
 }
@@ -56,22 +57,18 @@
   background-color: #fff;
 }
 .btn{
-  /* background:linear-gradient(#fc2727, #e20000); */
-  background: linear-gradient(#ffe744,#ffae00);
-  border-radius:6px;
-  color:#000;
-  border:1px solid #fff;
+  background: linear-gradient(#54d1b3,#10a6af);
+  border-radius:12px;
+  color:#fff; 
   width:170rpx;
   text-align:center;
   padding:6px;
   font-size:24rpx;
+  margin-bottom:40px;
 }
 .modal_opacity{
   background:rgba(0, 0, 0, 0.3);
 }
 .opacity_0{
   opacity: 0
-}
-.modal-dialog{
-  border: 1px solid #fff;
 }
